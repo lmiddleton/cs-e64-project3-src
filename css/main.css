@@ -1,0 +1,98 @@
+/*Project 2 styles*/
+
+body{
+	color: #333333;
+	font-family: Arial;
+	font-size: 13px;
+	min-width: 1200px;
+}
+
+svg {
+	/*cursor: pointer;*/
+}
+
+h1 {
+	margin: 0px;
+}
+
+h2 {
+	font-size: 14px;
+	margin: 0px;
+}
+
+h3 {
+	color: #666666;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+#description {
+	padding: 10px;
+}
+
+#map1 {
+	float: left;
+	height: 450px;
+	margin-bottom: 50px;
+	margin-top: 20px;
+	width: 900px;
+}
+
+#map1 svg {
+}
+
+#control-panel {
+	float: left;
+}
+
+.color-key {
+	background-color: grey;
+	border: solid 1px #d7d7d7;
+	display: inline-block;
+	height: 20px;
+	margin-bottom: 3px;
+	width: 30px;
+}
+
+#color-key1 {
+	background-color: #EDF8FB;
+}
+
+#color-key2 {
+	background-color: #BFD3E6;
+}
+
+#color-key3 {
+	background-color: #9EBCDA;
+}
+
+#color-key4 {
+	background-color: #8C96C6;
+}
+
+#color-key5 {
+	background-color: #8856A7;
+}
+
+#color-key6 {
+	background-color: #810F7C;
+}
+
+#color-key-no-data {
+	background-color: #efefef;
+}
+
+.key-text {
+	display: inline-block;
+	line-height: 10px;
+}
+
+.active-state {
+	stroke: red !important;
+	fill: red !important;
+}
+
+.ul-basic {
+	margin: 0px;
+	list-style-type: none;
+}
