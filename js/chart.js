@@ -210,9 +210,9 @@ function drawBars(state,year) {
       .domain([0, 1])
       .range([0, h]);
     
-    var color = d3.scale.linear()
-      .domain([0, 20, 40, 60, 80]) // from 1, 2, 3, 4, 5
-      .range(["#FFB870", "#FF9933", "#FF3300", "#FF0000", "#CC0000"]);
+    //var color = d3.scale.linear()
+      //.domain([0, 20, 40, 60, 80]) // from 1, 2, 3, 4, 5
+      //.range(["#FFB870", "#FF9933", "#FF3300", "#FF0000", "#CC0000"]);
     
     chart.selectAll("rect.data")
       .data(data)
@@ -336,9 +336,9 @@ function drawBarsYears(state,years) {
       .domain([0, 1])
       .range([0, h]);
     
-    var color = d3.scale.linear()
-      .domain([0, 20, 40, 60, 80]) // from 1, 2, 3, 4, 5
-      .range(["#FFB870", "#FF9933", "#FF3300", "#FF0000", "#CC0000"]);
+    //var color = d3.scale.linear()
+      //.domain([0, 20, 40, 60, 80]) // from 1, 2, 3, 4, 5
+      //.range(["#FFB870", "#FF9933", "#FF3300", "#FF0000", "#CC0000"]);
     
     chart.selectAll("rect.data")
       .data(data)
@@ -356,8 +356,7 @@ function drawBarsYears(state,years) {
       .transition()
       .duration(500)
       .attr("width", function(d) { return x(d.score); })
-      //.attr("fill", function(d) { return color(d.score); });
-      .attr("fill, #333333");
+      .attr("fill", function(d) { return "#333333"; });
     
     chart.selectAll("text.label")
       .data(data)
