@@ -57,7 +57,6 @@ html, body, div, form, fieldset, input, textarea, li, ul, hr {
 
 .background {
     fill: yellow;
-    z-index: -1;
 }
 
 .dots {

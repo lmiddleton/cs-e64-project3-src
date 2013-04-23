@@ -1,3 +1,7 @@
+/******************************************************************
+ ***************************LINE GRAPH******************************
+ *****************************************************************/
+
 /* Adapted from Sofia Hou's example in lab */
 function drawGraph(state) {
 
@@ -14,11 +18,21 @@ function drawGraph(state) {
         .x(function(d) { return x(d.x); })
         .y(function(d) { return y(d.y); });
 
+    var onLoad = function() {
+      $("svg.line-graph").on("click", function() {
+        console.log("clicked");
+        //increase the height of the bg rectangle for brushing
+        $('.background').attr("height", height);
+      });
+    }
+
     var svg = d3.select(".container").append("svg")
+        .attr("class", "line-graph")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+        .attr("onload", onLoad);
         
     var mydata = state_data_JSON[state];
     
@@ -80,6 +94,9 @@ function drawGraph(state) {
     dots.on("mouseover", mouseover)
         .on("mouseout", mouseout);
     
+/******************************************************************
+ ***************************LINE GRAPH BRUSHING********************
+ *****************************************************************/
 	
 	/*brushing functionality is adapted from John Mercer's example, as well as here: http://bl.ocks.org/mbostock/4063663 */
 	var brush = d3.svg.brush()
@@ -97,17 +114,21 @@ function drawGraph(state) {
 		.attr("class", "x brush")
 		.call(brush)
 	.selectAll("rect")
-		.attr("height", height);
+		.attr("height", height); //start with height of 0 so hover works
 	
 	var brushBar;
-	
+
+  //put on delay to avoid height problem?
 	function brushstart(p) {
     console.log("brush start."); 
+    //make background rectangle have a positive height again so brushing works
+    //$('.background').attr("height", height);
+
     if (brushBar !== p) {
       bar.call(brush.clear());
       brushBar = p;
       $("#bars").empty();
-        console.log(d.x.getFullYear());
+        //console.log(d.x.getFullYear());
         $("#bartitle").text(state_data_JSON[_STATE]["Name"] + " Firearm Homocides by Weapon - " + yearShown);
         drawBars(_STATE,yearShown);
 	   }
@@ -144,11 +165,17 @@ function drawGraph(state) {
     }
     $("#bars").empty();
     drawBarsYears(_STATE,indices);
+
+    //make background rectangle have a height of 0 so point hovering works
+    $('.background').attr("height", 0);
 	}
 
 }
 
 function mouseover (d) {
+  //make background rectangle have a height of 0 so point hovering works
+    //$('.background').attr("height", 0);
+
      d3.select(this)
         .style("fill", "red")
         .attr("r", 7);
@@ -176,6 +203,10 @@ function isInDocument (el) {
     }
     return false;
 };
+
+/******************************************************************
+ ***************************BAR GRAPH******************************
+ *****************************************************************/
 
 /* Adapted from Billy Janitsch's example in lab */
 function drawBars(state,year) {

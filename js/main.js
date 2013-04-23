@@ -174,6 +174,8 @@ window.onload = function() {
 	initYearSelect();
 	initGunTypeSelect();
 
+	//brushClick();
+
 	//for testing
 	//alert("javascript is working.");
 
