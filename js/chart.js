@@ -24,12 +24,8 @@ function drawGraph(state) {
     
     data = []
     $.each(mydata, function(key, value) {
-        //console.log(key + " " + value["Total murders1"])
         if (key != "Name") {
-            //console.log(value["Population"]);
-            //console.log(value["Total murders1"]);
             per100K = value["Total firearms"]*(100000.0/value["Population"]);
-            //console.log("per100K:" + per100K);
             if (!isNaN(per100K)) {
                 data.push({"x":key,"y":per100K});
             }
@@ -42,9 +38,7 @@ function drawGraph(state) {
     
     data.forEach(function (d) {
         d.x = parseDate(d.x);
-        //console.log(d.x);
         d.y = parseFloat(d.y);
-        //console.log(d.y);
     });
     
     x.domain(d3.extent(data, function(d) { return d.x; }));
@@ -65,13 +59,11 @@ function drawGraph(state) {
         .style("text-anchor", "end")
         .text("Firearm Homocides Per 100K")
         .attr("font-family", "Open Sans")
-		//.attr("cursor", "crosshair");
 
     svg.append("path")
         .datum(data)
         .attr("class", "line")
         .attr("d", line)
-		//.attr("cursor", "crosshair");
 
     dots = svg.selectAll("circle")
         .data(data)
@@ -99,8 +91,6 @@ function drawGraph(state) {
 	//context for the brush
 	var context = svg.append("g");
 
-  //svg.appendChild(dots);
-
 	//this is from the context + linking example
 	context.append("g")
 		.attr("class", "x brush")
@@ -123,14 +113,9 @@ function drawGraph(state) {
 	}
 
 	// Highlight the selected circles.
-	function brushmove(p) {
-		//console.log("brush move.."); 
-  
+	function brushmove(p) {  
 		var e = brush.extent();
-
     var points = d3.selectAll("circle");
-    //console.log(points);
-
 	}
   
 	// If the brush is empty, select all circles.
@@ -139,12 +124,9 @@ function drawGraph(state) {
 
     var indices  = [];
     for(var i = 0; i < dots[0].length; i++) {
-      //console.log(dots[0][i]);
       var circle = dots[0][i];
       var xCoord = $(circle).attr('cx');
       var yCoord = $(circle).attr('cy');
-      //console.log(xCoord + "," + yCoord);
-      //console.log(e[0][0]);
       var extentX1 = $(".extent").attr("x");
       extentX1 = parseFloat(extentX1);
       var exWidth = $(".extent").attr("width");
@@ -162,20 +144,6 @@ function drawGraph(state) {
     $("#bars").empty();
     drawBarsYears(_STATE,indices);
 	}
-/*        
-    dots = svg.selectAll("circle")
-    .data(data)
-    .enter()
-    .append("circle")
-    .attr("class", "dots")
-    .attr("cx", function(d) 
-        { return x(d.x); })
-    .attr("cy", function(d) 
-        { return y(d.y); })
-    .attr("r", 6);
-
-    dots.on("mouseover", mouseover)
-        .on("mouseout", mouseout);*/
 
 }
 
@@ -186,34 +154,14 @@ function mouseover (d) {
     
     $("#bars").empty();
     console.log(d.x.getFullYear());
-    //yearShown = d.x.getFullYear();
     $("#bartitle").text(state_data_JSON[_STATE]["Name"] + " Firearm Homocides by Weapon - " + d.x.getFullYear());
     drawBars(_STATE,d.x.getFullYear());
-    //$("#bars").empty();
-    //drawBars(data.geography.id,_YEAR);
-    /*
-    var label = document.getElementById("container");
-    var pTag = document.createElement("p");
-    pTag.id = "label";
-    pTag.style.fontWeight="400";
-    pTag.innerHTML = "<b>Time: </b>" + d.x + "<br>" +
-        "<b>Value: </b>" + d.y + "<br>";
-
-    label.appendChild(pTag)
-    */
 };
 
 function mouseout (d) {
     d3.select(this)
         .style("fill", "black")
         .attr("r", 6);
-
-    /* 
-    var label = document.getElementById("container");
-
-    if (isInDocument(document.getElementById("label"))){
-        label.removeChild(document.getElementById("label"));}
-    */
 };
 
 function isInDocument (el) {
@@ -234,26 +182,17 @@ function drawBars(state,year) {
     var mydata = state_data_JSON[state][year];
     
     data = []
-    //$.each(mydata, function(key, value) {
 
         var total = mydata["Total firearms"];
         var unknown = (mydata["Firearms (type unknown)"]/total)*100;
         var hangun = (mydata["Handguns"]/total)*100;
-        //var melee = (mydata["Hands, fists, feet, etc.2"]/total)*100;
-        //var knives = (mydata["Knives or cutting instruments"]/total)*100;
         var rifles = (mydata["Rifles"]/total)*100;
         var shotguns = (mydata["Shotguns"]/total)*100;
-        //var other = (mydata["Other weapons"]/total)*100;
 
         data.push({"label":"Unknown Type","score":unknown})
         data.push({"label":"Handguns","score":hangun})
-        //data.push({"label":"Hands,feet,etc","score":melee})
-        //data.push({"label":"Blades","score":knives})
         data.push({"label":"Rifles","score":rifles})
         data.push({"label":"Shotguns","score":shotguns})
-        //data.push({"label":"Other","score":other})
-
-    //});
     
     var chart = d3.select("#bars");
     var width = chart.attr("width");
@@ -286,7 +225,6 @@ function drawBars(state,year) {
       .attr("data-label", function(d) { return d.label})
       .attr("stroke-width", 0)
       .attr("fill", function(d, i) { return color(1); })
-      //.style("cursor", "pointer")
       .attr("class", "data")
       .transition()
       .duration(500)
@@ -306,7 +244,6 @@ function drawBars(state,year) {
       .attr("font-family", "Arial")
       .attr("stroke-width", 0)
       .attr("data-label", function(d) { return d.label; })
-      //.attr("cursor", "pointer");
     
     chart.selectAll("text.score")
       .data(data)
@@ -321,16 +258,12 @@ function drawBars(state,year) {
       .attr("stroke-width", 0)
       .attr("data-label", function(d) { return d.label; })
       .attr("class", "score");
-      //.style("cursor", "pointer");
-
-
 }
 
 /* Adapted from Billy Janitsch's example in lab */
 function drawBarsYears(state,years) {
     if (years.length == 0) {
         $("#bars").empty();
-        //console.log(d.x.getFullYear());
         $("#bartitle").text(state_data_JSON[_STATE]["Name"] + " Firearm Homocides by Weapon - " + yearShown);
         drawBars(_STATE,yearShown);
     }
@@ -417,7 +350,6 @@ function drawBarsYears(state,years) {
       .attr("data-label", function(d) { return d.label})
       .attr("stroke-width", 0)
       .attr("fill", function(d, i) { return color(1); })
-      //.style("cursor", "pointer")
       .attr("class", "data")
       .transition()
       .duration(500)
@@ -437,7 +369,6 @@ function drawBarsYears(state,years) {
       .attr("font-family", "Arial")
       .attr("stroke-width", 0)
       .attr("data-label", function(d) { return d.label; })
-      //.attr("cursor", "pointer");
     
     chart.selectAll("text.score")
       .data(data)
@@ -452,7 +383,6 @@ function drawBarsYears(state,years) {
       .attr("stroke-width", 0)
       .attr("data-label", function(d) { return d.label; })
       .attr("class", "score");
-      //.style("cursor", "pointer");
     }
 
 }
