@@ -74,7 +74,8 @@ function drawGraph(state) {
             { return x(d.x); })
         .attr("cy", function(d) 
             { return y(d.y); })
-        .attr("r", 6);
+        .attr("r", 5)
+        .attr("fill", "#333333");
 
     dots.on("mouseover", mouseover)
         .on("mouseout", mouseout);
@@ -160,8 +161,8 @@ function mouseover (d) {
 
 function mouseout (d) {
     d3.select(this)
-        .style("fill", "black")
-        .attr("r", 6);
+        .style("fill", "#333333")
+        .attr("r", 5);
 };
 
 function isInDocument (el) {
@@ -224,12 +225,13 @@ function drawBars(state,year) {
       .attr("shape-rendering", "crispEdges")
       .attr("data-label", function(d) { return d.label})
       .attr("stroke-width", 0)
-      .attr("fill", function(d, i) { return color(1); })
+      //.attr("fill", function(d, i) { return color(1); })
       .attr("class", "data")
       .transition()
       .duration(500)
       .attr("width", function(d) { return x(d.score); })
-      .attr("fill", function(d) { return color(d.score); });
+      //.attr("fill", function(d) { return color(d.score); });
+      .attr("fill", "#333333")
     
     chart.selectAll("text.label")
       .data(data)
@@ -349,12 +351,13 @@ function drawBarsYears(state,years) {
       .attr("shape-rendering", "crispEdges")
       .attr("data-label", function(d) { return d.label})
       .attr("stroke-width", 0)
-      .attr("fill", function(d, i) { return color(1); })
+      //.attr("fill", function(d, i) { return color(1); })
       .attr("class", "data")
       .transition()
       .duration(500)
       .attr("width", function(d) { return x(d.score); })
-      .attr("fill", function(d) { return color(d.score); });
+      //.attr("fill", function(d) { return color(d.score); });
+      .attr("fill, #333333");
     
     chart.selectAll("text.label")
       .data(data)
