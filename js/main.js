@@ -1,4 +1,6 @@
-/*Project 2 functions*/
+/******************************************************************
+ ***************************MAP 1**********************************
+ *****************************************************************/
 
 /*re-renders the map for the selected year*/
 function drawMap(year, gunType, dataObject) {
@@ -105,10 +107,6 @@ function drawMap(year, gunType, dataObject) {
 	
 }
 
-function setKey() {
-
-}
-
 /*year dropdown handler*/
 function initYearSelect() {
 	$("#year").change(function() {
@@ -159,22 +157,66 @@ function gunMurdersPer(dataObject, state, year, gunType, per) {
 	return gunMurdersPer;
 }
 
-/********************************/
+/******************************************************************
+ ***************************MAP 2**********************************
+ *****************************************************************/
 
-//init global variables
+function drawMap2() {
+	console.log("draw map 2");
+
+	//set up popup tmeplate
+	var newTemplate = '<div class="hoverinfo"><strong><%= geography.properties.name %></strong>';
+
+	//set up map variable
+	map = new Map({
+		scope: 'usa',
+		el: $('#map2'),
+      	geography_config: { 
+        	borderColor: '#d7d7d7',
+        	highlightBorderColor: '#333333',
+        	highlightOnHover: true,
+        	popupTemplate: _.template(newTemplate)
+      },
+		fills: {
+			'LEV1': '#EDF8FB',
+			'LEV2': '#BFD3E6',
+			'LEV3': '#9EBCDA',
+			'LEV4': '#8C96C6',
+			'LEV5': '#8856A7',
+			'LEV6': '#810F7C',
+			'NODATA': '#EFEFEF',
+			'ACTIVE': '#BADA55',
+			defaultFill: '#EFEFEF'
+		},
+		//data: state_data_JSON
+	});
+
+	//render the map
+	map.render();
+}
+
+/******************************************************************
+ ***************************DOCUMENT READY*************************
+ *****************************************************************/
+
+//global variables for map1
 var map;
 var gunTypeShown = "all";
 var yearShown = "2006";
+
+//global variable for map2
+var map2;
 
 window.onload = function() {
 	//init map 1
 	drawMap(yearShown, gunTypeShown, state_data_JSON);
 
-	//init filters
+	//init map1 filters
 	initYearSelect();
 	initGunTypeSelect();
 
-	//brushClick();
+	//init map 2
+	drawMap2();
 
 	//for testing
 	//alert("javascript is working.");

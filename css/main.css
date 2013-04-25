@@ -30,10 +30,11 @@ h3 {
 	padding: 10px;
 }
 
-#map1 {
+#map1, #map2 {
 	float: left;
 	height: 450px;
 	margin-bottom: 50px;
+	margin-left: 30px;
 	margin-top: 20px;
 	width: 900px;
 }
@@ -41,7 +42,7 @@ h3 {
 #map1 svg {
 }
 
-#control-panel {
+#control-panel, #control-panel2 {
 	float: left;
 }
 
@@ -95,4 +96,18 @@ h3 {
 .ul-basic {
 	margin: 0px;
 	list-style-type: none;
+}
+
+.graph-parent {
+	clear: both;
+}
+
+.line-graph-parent {
+	float: left;
+	margin-left: 40px;
+}
+
+.bar-graph-parent {
+	float: left;
+	margin-left: 80px;
 }

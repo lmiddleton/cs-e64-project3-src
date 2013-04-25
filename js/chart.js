@@ -118,7 +118,6 @@ function drawGraph(state) {
 	
 	var brushBar;
 
-  //put on delay to avoid height problem?
 	function brushstart(p) {
     console.log("brush start."); 
     //make background rectangle have a positive height again so brushing works
