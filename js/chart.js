@@ -91,8 +91,8 @@ function drawGraph(state) {
         .attr("r", 5)
         .attr("fill", "#333333");
 
-    dots.on("mouseover", mouseover)
-        .on("mouseout", mouseout);
+    //dots.on("mouseover", mouseover)
+        //.on("mouseout", mouseout);
     
 /******************************************************************
  ***************************LINE GRAPH BRUSHING********************
@@ -114,15 +114,12 @@ function drawGraph(state) {
 		.attr("class", "x brush")
 		.call(brush)
 	.selectAll("rect")
-		.attr("height", height); //start with height of 0 so hover works
+		.attr("height", height);
 	
 	var brushBar;
 
 	function brushstart(p) {
-    console.log("brush start."); 
-    //make background rectangle have a positive height again so brushing works
-    //$('.background').attr("height", height);
-
+    console.log("brush start.");
     if (brushBar !== p) {
       bar.call(brush.clear());
       brushBar = p;
@@ -166,7 +163,7 @@ function drawGraph(state) {
     drawBarsYears(_STATE,indices);
 
     //make background rectangle have a height of 0 so point hovering works
-    $('.background').attr("height", 0);
+    //$('.background').attr("height", 0);
 	}
 
 }
