@@ -1,4 +1,4 @@
-var JSON_data = {
+var state_data_JSON = {
     "AK": {
         "2006": {
             "Firearms (type unknown)": "1.0",

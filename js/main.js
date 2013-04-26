@@ -207,6 +207,210 @@ function drawMap2() {
  			introJs().start();
  		});
  }
+ 
+ /****************************************************************
+ ***************************GUN LAW MAP***************************
+ *****************************************************************/
+
+/*re-renders the map for the selected year*/
+function drawMapGuns(year, lawType, dataObject) {
+	//clear map div so map is not duplicated
+	$("#map1").empty();
+
+	var type;
+	
+	//do all necessary calculations of data here
+	for(state in dataObject) {
+		type = dataObject[state][lawType];
+		if (lawType == "alcoholserved") {
+		
+			//console.log(gunMurdersPer100K);
+			if(type == "allowed"){
+				dataObject[state]["fillKey"] = "AWFUL";
+			}
+			else if(type == "ban"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "unclear"){
+				dataObject[state]["fillKey"] = "NONE";
+			}
+		}
+		else if (lawType == "arenas") {
+		
+			//console.log(gunMurdersPer100K);
+			if(type == "allowed"){
+				dataObject[state]["fillKey"] = "AWFUL";
+			}
+			else if(type == "ban"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "unclear"){
+				dataObject[state]["fillKey"] = "NONE";
+			}
+		}
+		else if (lawType == "churches") {
+		
+			//console.log(gunMurdersPer100K);
+			if(type == "allowed"){
+				dataObject[state]["fillKey"] = "AWFUL";
+			}
+			else if(type == "ban"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "partial ban"){
+				dataObject[state]["fillKey"] = "GOOD";
+			}
+			else if(type == "unclear"){
+				dataObject[state]["fillKey"] = "NONE";
+			}
+		}
+		else if (lawType == "concealedtype") {
+		
+			//console.log(gunMurdersPer100K);
+			if(type == "allowed"){
+				dataObject[state]["fillKey"] = "AWFUL";
+			}
+			else if(type == "ban"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "partial ban"){
+				dataObject[state]["fillKey"] = "GOOD";
+			}
+			else if(type == "unclear"){
+				dataObject[state]["fillKey"] = "NONE";
+			}
+		}
+		else if (lawType == "gunshowregulation") {
+		
+			//console.log(gunMurdersPer100K);
+			if(type == "gsbg"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "no regulation"){
+				dataObject[state]["fillKey"] = "NONE";
+			}
+			else if(type == "other regulation"){
+				dataObject[state]["fillKey"] = "GOOD";
+			}
+			else if(type == "other regulation, gsbg"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "other regulation, ubg"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "ubg"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+		}
+		else if (lawType == "gunsoncampus") {
+		
+			//console.log(gunMurdersPer100K);
+			if(type == "allow"){
+				dataObject[state]["fillKey"] = "AWFUL";
+			}
+			else if(type == "ban"){
+				dataObject[state]["fillKey"] = "GOOD";
+			}
+			else if(type == "ban - bc noconcealed weapons"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "descretion"){
+				dataObject[state]["fillKey"] = "NONE";
+			}
+		}
+		else if (lawType == "handgunpermit") {
+		
+			//console.log(gunMurdersPer100K);
+			if(type == "both"){
+				dataObject[state]["fillKey"] = "GOOD";
+			}
+			else if(type == "license"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "n"){
+				dataObject[state]["fillKey"] = "NONE";
+			}
+			else if(type == "permit"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "y"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+		}
+		else if (lawType == "hospitals") {
+		
+			if(type == "allowed"){
+				dataObject[state]["fillKey"] = "NONE";
+			}
+			else if(type == "ban"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "partial ban"){
+				dataObject[state]["fillKey"] = "GOOD";
+			}
+			else if(type == "unclear"){
+				dataObject[state]["fillKey"] = "NONE";
+			}
+		}
+	}
+
+	//set up popup tmeplate
+	var newTemplate = '<div class="hoverinfo"><strong><%= geography.properties.name %></strong> <% if (data["alcoholserved"]) { %><hr/>  Alcohol: <%= gun_key["alcoholserved"][alcohol] %> <% } %><br/>Total Firearm Homicides: <%= data[' + year + ']["Total firearms"] %><br/>Population: <%= data[' + year + ']["Population"] %><br/><strong>Firearm Homicides Per 100K People:</strong> <%= data[' + year + ']["GunMurdersPer100K"] %></div>';
+
+	//set up map variable
+	map = new Map({
+		scope: 'usa',
+		el: $('#map1'),
+      	geography_config: { 
+        	borderColor: '#d7d7d7',
+        	highlightBorderColor: '#333333',
+        	highlightOnHover: true,
+        	popupTemplate: _.template(newTemplate)
+      },
+		fills: {
+			'GREAT': '#0066FF',
+			'GOOD': '#99CCFF',
+			'NONE': '#FFFFFF',
+			'BAD': '#FF6666',
+			'AWFUL': '#CC0000',
+			defaultFill: '#EFEFEF'
+		},
+		data: state_data_JSON
+	});
+
+	//render the map
+	map.render();
+
+	//update globals
+	//yearShown = year;
+	//gunTypeShown = gunType;
+	
+	// Re-render the graph ever time a state is clicked
+    map.$el.bind("map-click", function(e, data) {
+        console.log(data.geography.id);
+        
+        if (data.geography.id == "FL") {
+			$(".container").empty();
+			$("#bars").empty();
+			$("#linetitle").text("No data for Florida");
+			$("#bartitle").empty();
+		}
+		else {
+			console.log(data.geography.id);
+			$(".container").empty();
+			_STATE = data.geography.id;
+			drawGraph(_STATE);
+			//_YEAR = "2006";
+			$("#linetitle").text(state_data_JSON[_STATE]["Name"] + " Firearm Homicides by Year");
+			$("#bartitle").text(state_data_JSON[_STATE]["Name"] + " Homicides by Firearm Type - " + yearShown);
+			$("#bars").empty();
+			drawBars(_STATE,yearShown);	
+		}
+    });
+	
+	
+}
+ 
 
 /******************************************************************
  ***************************DOCUMENT READY*************************
@@ -216,13 +420,15 @@ function drawMap2() {
 var map;
 var gunTypeShown = "all";
 var yearShown = "2006";
+var lawType = "alcoholserved";
 
 //global variable for map2
 var map2;
 
 window.onload = function() {
 	//init map 1
-	drawMap(yearShown, gunTypeShown, state_data_JSON);
+	//drawMap(yearShown, gunTypeShown, state_data_JSON);
+	drawMapGuns(yearShown, lawType, state_data_JSON);
 
 	//init map1 filters
 	initYearSelect();
