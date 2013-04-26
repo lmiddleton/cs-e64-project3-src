@@ -5,6 +5,7 @@
 	<title>Firearm Homicides in the US</title>
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.9.2.custom.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/introjs.css" />
 	<link rel="stylesheet" type="text/css" href="css/svg.css" />
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
 	<!-- JS -->
@@ -12,6 +13,7 @@
 	<script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
 	<script type="text/javascript" src="js/d3.v3.js"></script>
 	<script type="text/javascript" src="js/datamaps-us-only.js"></script>
+	<script type="text/javascript" src="js/intro.js"></script>
 	<script type="text/javascript" src="js/state_data_JSON.js"></script>
 	<script type="text/javascript" src="js/chart.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
@@ -21,8 +23,9 @@
 	<div id="description">
 		<h1>Firearm Homicides in the United States</h1>
 		<h2>by Josh McElfresh and Lauren Middleton</h2>
-		<h3>
-			Use the filters to see the rates of firearm homicide per hundred thousand people for the selected year and firearm type. Click a state to see it's firearm homicide data over time. Hover over the points for a breakdown of firearm types involved in homicides for that year, or click and drag to see the breakdown of types for a range of years. Data from FBI.gov and census.gov.
+		<button>Take a Tour</button>
+		<h3 data-intro='Hello step one!' data-step='1'>
+			Use the filters to see the rates of firearm homicide per hundred thousand people for the selected year and firearm type. Click a state to see it's firearm homicide data over time. Click and drag over one or more points to see the breakdown of types for a range of years. Data from FBI.gov and census.gov.
 		</h3>
 	</div>
 
