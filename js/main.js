@@ -156,57 +156,6 @@ function gunMurdersPer(dataObject, state, year, gunType, per) {
 	//console.log("gunmurdersper: " + gunMurdersPer);
 	return gunMurdersPer;
 }
-
-/******************************************************************
- ***************************MAP 2**********************************
- *****************************************************************/
-
-function drawMap2() {
-	console.log("draw map 2");
-
-	//set up popup tmeplate
-	var newTemplate = '<div class="hoverinfo"><strong><%= geography.properties.name %></strong>';
-
-	//set up map variable
-	map = new Map({
-		scope: 'usa',
-		el: $('#map2'),
-      	geography_config: { 
-        	borderColor: '#d7d7d7',
-        	highlightBorderColor: '#333333',
-        	highlightOnHover: true,
-        	popupTemplate: _.template(newTemplate)
-      },
-		fills: {
-			'LEV1': '#EDF8FB',
-			'LEV2': '#BFD3E6',
-			'LEV3': '#9EBCDA',
-			'LEV4': '#8C96C6',
-			'LEV5': '#8856A7',
-			'LEV6': '#810F7C',
-			'NODATA': '#EFEFEF',
-			'ACTIVE': '#BADA55',
-			defaultFill: '#EFEFEF'
-		},
-		//data: state_data_JSON
-	});
-
-	//render the map
-	map.render();
-}
-
-/******************************************************************
- ***************************TOUR OF PAGE***************************
- *****************************************************************/
-
- function initTourBtn() {
- 	$('button')
- 		.button()
- 		.click(function(event){
- 			event.preventDefault();
- 			introJs().start();
- 		});
- }
  
  /****************************************************************
  ***************************GUN LAW MAP***************************
@@ -215,7 +164,7 @@ function drawMap2() {
 /*re-renders the map for the selected year*/
 function drawMapGuns(year, lawType, dataObject) {
 	//clear map div so map is not duplicated
-	$("#map1").empty();
+	$("#map2").empty();
 
 	var type;
 	
@@ -355,12 +304,12 @@ function drawMapGuns(year, lawType, dataObject) {
 	}
 
 	//set up popup tmeplate
-	var newTemplate = '<div class="hoverinfo"><strong><%= geography.properties.name %></strong> <% if (data["alcoholserved"]) { %><hr/>  Alcohol: <%= gun_key["alcoholserved"][alcohol] %> <% } %><br/>Total Firearm Homicides: <%= data[' + year + ']["Total firearms"] %><br/>Population: <%= data[' + year + ']["Population"] %><br/><strong>Firearm Homicides Per 100K People:</strong> <%= data[' + year + ']["GunMurdersPer100K"] %></div>';
+	var newTemplate = '<div class="hoverinfo"><strong><%= geography.properties.name %></strong> <% if (data["alcoholserved"]) { %><hr/>  Alcohol: <%= gun_key["alcoholserved"] %> <% } %><br/>Total Firearm Homicides: <%= data[' + year + ']["Total firearms"] %><br/>Population: <%= data[' + year + ']["Population"] %><br/><strong>Firearm Homicides Per 100K People:</strong> <%= data[' + year + ']["GunMurdersPer100K"] %></div>';
 
 	//set up map variable
-	map = new Map({
+	map2 = new Map({
 		scope: 'usa',
-		el: $('#map1'),
+		el: $('#map2'),
       	geography_config: { 
         	borderColor: '#d7d7d7',
         	highlightBorderColor: '#333333',
@@ -379,13 +328,14 @@ function drawMapGuns(year, lawType, dataObject) {
 	});
 
 	//render the map
-	map.render();
+	map2.render();
 
 	//update globals
 	//yearShown = year;
 	//gunTypeShown = gunType;
 	
-	// Re-render the graph ever time a state is clicked
+	// Re-render the graph every time a state is clicked
+	/*
     map.$el.bind("map-click", function(e, data) {
         console.log(data.geography.id);
         
@@ -407,10 +357,24 @@ function drawMapGuns(year, lawType, dataObject) {
 			drawBars(_STATE,yearShown);	
 		}
     });
+*/
 	
 	
 }
  
+/******************************************************************
+ ***************************TOUR OF PAGE***************************
+ *****************************************************************/
+
+ function initTourBtn() {
+ 	$('button')
+ 		.button()
+ 		.click(function(event){
+ 			event.preventDefault();
+ 			introJs().start();
+ 		});
+ }
+
 
 /******************************************************************
  ***************************DOCUMENT READY*************************
@@ -427,15 +391,15 @@ var map2;
 
 window.onload = function() {
 	//init map 1
-	//drawMap(yearShown, gunTypeShown, state_data_JSON);
-	drawMapGuns(yearShown, lawType, state_data_JSON);
+	drawMap(yearShown, gunTypeShown, state_data_JSON);
 
 	//init map1 filters
 	initYearSelect();
 	initGunTypeSelect();
 
 	//init map 2
-	drawMap2();
+	//drawMap2();
+	drawMapGuns(yearShown, lawType, state_data_JSON);
 
 	initTourBtn();
 
