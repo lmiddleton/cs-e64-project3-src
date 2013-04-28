@@ -61,16 +61,16 @@ var state_data_JSON = {
             "Total murders1": "31.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "8.0",
+            "Firearms (type unknown)": "8.0",
             "Handguns": "5.0",
-            "Hands, fists,\nfeet, etc.2": "2.0",
-            "Knives or\ncutting\ninstruments": "6.0",
-            "Other\nweapons": "5.0",
+            "Hands, fists, feet, etc.2": "2.0",
+            "Knives or cutting instruments": "6.0",
+            "Other weapons": "5.0",
             "Population": "714046",
             "Rifles": "0.0",
             "Shotguns": "3.0",
-            "Total\nfirearms": "16.0",
-            "Total\nmurders1": "29.0"
+            "Total firearms": "16.0",
+            "Total murders1": "29.0"
         },
         "Name": "Alaska",
         "alcoholserved": "ban",
@@ -242,16 +242,16 @@ var state_data_JSON = {
             "Total murders1": "130.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "48.0",
+            "Firearms (type unknown)": "48.0",
             "Handguns": "52.0",
-            "Hands, fists,\nfeet, etc.2": "4.0",
-            "Knives or\ncutting\ninstruments": "22.0",
-            "Other\nweapons": "17.0",
+            "Hands, fists, feet, etc.2": "4.0",
+            "Knives or cutting instruments": "22.0",
+            "Other weapons": "17.0",
             "Population": "2922750",
             "Rifles": "4.0",
             "Shotguns": "6.0",
-            "Total\nfirearms": "110.0",
-            "Total\nmurders1": "153.0"
+            "Total firearms": "110.0",
+            "Total murders1": "153.0"
         },
         "Name": "Arkansas",
         "alcoholserved": "ban",
@@ -337,16 +337,16 @@ var state_data_JSON = {
             "Total murders1": "352.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "34.0",
+            "Firearms (type unknown)": "34.0",
             "Handguns": "165.0",
-            "Hands, fists,\nfeet, etc.2": "9.0",
-            "Knives or\ncutting\ninstruments": "49.0",
-            "Other\nweapons": "59.0",
+            "Hands, fists, feet, etc.2": "9.0",
+            "Knives or cutting instruments": "49.0",
+            "Other weapons": "59.0",
             "Population": "6410810",
             "Rifles": "14.0",
             "Shotguns": "9.0",
-            "Total\nfirearms": "222.0",
-            "Total\nmurders1": "339.0"
+            "Total firearms": "222.0",
+            "Total murders1": "339.0"
         },
         "Name": "Arizona",
         "alcoholserved": "allowed",
@@ -432,16 +432,16 @@ var state_data_JSON = {
             "Total murders1": "1811.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "259.0",
+            "Firearms (type unknown)": "259.0",
             "Handguns": "866.0",
-            "Hands, fists,\nfeet, etc.2": "101.0",
-            "Knives or\ncutting\ninstruments": "261.0",
-            "Other\nweapons": "208.0",
+            "Hands, fists, feet, etc.2": "101.0",
+            "Knives or cutting instruments": "261.0",
+            "Other weapons": "208.0",
             "Population": "37334410",
             "Rifles": "45.0",
             "Shotguns": "50.0",
-            "Total\nfirearms": "1220.0",
-            "Total\nmurders1": "1790.0"
+            "Total firearms": "1220.0",
+            "Total murders1": "1790.0"
         },
         "Name": "California",
         "alcoholserved": "allowed",
@@ -527,16 +527,16 @@ var state_data_JSON = {
             "Total murders1": "117.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "26.0",
+            "Firearms (type unknown)": "26.0",
             "Handguns": "39.0",
-            "Hands, fists,\nfeet, etc.2": "21.0",
-            "Knives or\ncutting\ninstruments": "22.0",
-            "Other\nweapons": "31.0",
+            "Hands, fists, feet, etc.2": "21.0",
+            "Knives or cutting instruments": "22.0",
+            "Other weapons": "31.0",
             "Population": "5048472",
             "Rifles": "3.0",
             "Shotguns": "5.0",
-            "Total\nfirearms": "73.0",
-            "Total\nmurders1": "147.0"
+            "Total firearms": "73.0",
+            "Total murders1": "147.0"
         },
         "Name": "Colorado",
         "alcoholserved": "allowed",
@@ -622,16 +622,16 @@ var state_data_JSON = {
             "Total murders1": "131.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "38.0",
+            "Firearms (type unknown)": "38.0",
             "Handguns": "54.0",
-            "Hands, fists,\nfeet, etc.2": "6.0",
-            "Knives or\ncutting\ninstruments": "18.0",
-            "Other\nweapons": "10.0",
+            "Hands, fists, feet, etc.2": "6.0",
+            "Knives or cutting instruments": "18.0",
+            "Other weapons": "10.0",
             "Population": "3576616",
             "Rifles": "1.0",
             "Shotguns": "1.0",
-            "Total\nfirearms": "94.0",
-            "Total\nmurders1": "128.0"
+            "Total firearms": "94.0",
+            "Total murders1": "128.0"
         },
         "Name": "Connecticut",
         "alcoholserved": "allowed",
@@ -717,16 +717,16 @@ var state_data_JSON = {
             "Total murders1": "48.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "7.0",
+            "Firearms (type unknown)": "7.0",
             "Handguns": "18.0",
-            "Hands, fists,\nfeet, etc.2": "3.0",
-            "Knives or\ncutting\ninstruments": "8.0",
-            "Other\nweapons": "2.0",
+            "Hands, fists, feet, etc.2": "3.0",
+            "Knives or cutting instruments": "8.0",
+            "Other weapons": "2.0",
             "Population": "899824",
             "Rifles": "0.0",
             "Shotguns": "3.0",
-            "Total\nfirearms": "28.0",
-            "Total\nmurders1": "41.0"
+            "Total firearms": "28.0",
+            "Total murders1": "41.0"
         },
         "Name": "Delaware",
         "alcoholserved": "allowed",
@@ -853,16 +853,16 @@ var state_data_JSON = {
             "Total murders1": "527.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "12.0",
+            "Firearms (type unknown)": "12.0",
             "Handguns": "326.0",
-            "Hands, fists,\nfeet, etc.2": "8.0",
-            "Knives or\ncutting\ninstruments": "61.0",
-            "Other\nweapons": "83.0",
+            "Hands, fists, feet, etc.2": "8.0",
+            "Knives or cutting instruments": "61.0",
+            "Other weapons": "83.0",
             "Population": "9714748",
             "Rifles": "16.0",
             "Shotguns": "16.0",
-            "Total\nfirearms": "370.0",
-            "Total\nmurders1": "522.0"
+            "Total firearms": "370.0",
+            "Total murders1": "522.0"
         },
         "Name": "Georgia",
         "alcoholserved": "partial ban",
@@ -948,16 +948,16 @@ var state_data_JSON = {
             "Total murders1": "24.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "0.0",
+            "Firearms (type unknown)": "0.0",
             "Handguns": "0.0",
-            "Hands, fists,\nfeet, etc.2": "3.0",
-            "Knives or\ncutting\ninstruments": "2.0",
-            "Other\nweapons": "1.0",
+            "Hands, fists, feet, etc.2": "3.0",
+            "Knives or cutting instruments": "2.0",
+            "Other weapons": "1.0",
             "Population": "1364274",
             "Rifles": "1.0",
             "Shotguns": "0.0",
-            "Total\nfirearms": "1.0",
-            "Total\nmurders1": "7.0"
+            "Total firearms": "1.0",
+            "Total murders1": "7.0"
         },
         "Name": "Hawaii",
         "alcoholserved": "allowed",
@@ -1043,16 +1043,16 @@ var state_data_JSON = {
             "Total murders1": "38.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "10.0",
+            "Firearms (type unknown)": "10.0",
             "Handguns": "7.0",
-            "Hands, fists,\nfeet, etc.2": "5.0",
-            "Knives or\ncutting\ninstruments": "10.0",
-            "Other\nweapons": "10.0",
+            "Hands, fists, feet, etc.2": "5.0",
+            "Knives or cutting instruments": "10.0",
+            "Other weapons": "10.0",
             "Population": "3050321",
             "Rifles": "0.0",
             "Shotguns": "2.0",
-            "Total\nfirearms": "19.0",
-            "Total\nmurders1": "44.0"
+            "Total firearms": "19.0",
+            "Total murders1": "44.0"
         },
         "Name": "Iowa",
         "alcoholserved": "allowed",
@@ -1138,16 +1138,16 @@ var state_data_JSON = {
             "Total murders1": "21.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "1.0",
+            "Firearms (type unknown)": "1.0",
             "Handguns": "15.0",
-            "Hands, fists,\nfeet, etc.2": "3.0",
-            "Knives or\ncutting\ninstruments": "4.0",
-            "Other\nweapons": "8.0",
+            "Hands, fists, feet, etc.2": "3.0",
+            "Knives or cutting instruments": "4.0",
+            "Other weapons": "8.0",
             "Population": "1570784",
             "Rifles": "1.0",
             "Shotguns": "0.0",
-            "Total\nfirearms": "17.0",
-            "Total\nmurders1": "32.0"
+            "Total firearms": "17.0",
+            "Total murders1": "32.0"
         },
         "Name": "Idaho",
         "alcoholserved": "allowed",
@@ -1233,16 +1233,16 @@ var state_data_JSON = {
             "Total murders1": "453.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "7.0",
+            "Firearms (type unknown)": "7.0",
             "Handguns": "364.0",
-            "Hands, fists,\nfeet, etc.2": "17.0",
-            "Knives or\ncutting\ninstruments": "29.0",
-            "Other\nweapons": "29.0",
+            "Hands, fists, feet, etc.2": "17.0",
+            "Knives or cutting instruments": "29.0",
+            "Other weapons": "29.0",
             "Population": "12840459",
             "Rifles": "1.0",
             "Shotguns": "5.0",
-            "Total\nfirearms": "377.0",
-            "Total\nmurders1": "452.0"
+            "Total firearms": "377.0",
+            "Total murders1": "452.0"
         },
         "Name": "Illinois",
         "alcoholserved": "ban",
@@ -1328,16 +1328,16 @@ var state_data_JSON = {
             "Total murders1": "198.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "47.0",
+            "Firearms (type unknown)": "47.0",
             "Handguns": "115.0",
-            "Hands, fists,\nfeet, etc.2": "22.0",
-            "Knives or\ncutting\ninstruments": "36.0",
-            "Other\nweapons": "43.0",
+            "Hands, fists, feet, etc.2": "22.0",
+            "Knives or cutting instruments": "36.0",
+            "Other weapons": "43.0",
             "Population": "6489856",
             "Rifles": "9.0",
             "Shotguns": "12.0",
-            "Total\nfirearms": "183.0",
-            "Total\nmurders1": "284.0"
+            "Total firearms": "183.0",
+            "Total murders1": "284.0"
         },
         "Name": "Indiana",
         "alcoholserved": "allowed",
@@ -1423,16 +1423,16 @@ var state_data_JSON = {
             "Total murders1": "100.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "34.0",
+            "Firearms (type unknown)": "34.0",
             "Handguns": "31.0",
-            "Hands, fists,\nfeet, etc.2": "10.0",
-            "Knives or\ncutting\ninstruments": "11.0",
-            "Other\nweapons": "16.0",
+            "Hands, fists, feet, etc.2": "10.0",
+            "Knives or cutting instruments": "11.0",
+            "Other weapons": "16.0",
             "Population": "2858837",
             "Rifles": "3.0",
             "Shotguns": "5.0",
-            "Total\nfirearms": "73.0",
-            "Total\nmurders1": "110.0"
+            "Total firearms": "73.0",
+            "Total murders1": "110.0"
         },
         "Name": "Kansas",
         "alcoholserved": "allowed",
@@ -1518,16 +1518,16 @@ var state_data_JSON = {
             "Total murders1": "180.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "12.0",
+            "Firearms (type unknown)": "12.0",
             "Handguns": "77.0",
-            "Hands, fists,\nfeet, etc.2": "13.0",
-            "Knives or\ncutting\ninstruments": "13.0",
-            "Other\nweapons": "24.0",
+            "Hands, fists, feet, etc.2": "13.0",
+            "Knives or cutting instruments": "13.0",
+            "Other weapons": "24.0",
             "Population": "4346655",
             "Rifles": "6.0",
             "Shotguns": "5.0",
-            "Total\nfirearms": "100.0",
-            "Total\nmurders1": "150.0"
+            "Total firearms": "100.0",
+            "Total murders1": "150.0"
         },
         "Name": "Kentucky",
         "alcoholserved": "partial ban",
@@ -1613,16 +1613,16 @@ var state_data_JSON = {
             "Total murders1": "437.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "12.0",
+            "Firearms (type unknown)": "12.0",
             "Handguns": "372.0",
-            "Hands, fists,\nfeet, etc.2": "26.0",
-            "Knives or\ncutting\ninstruments": "28.0",
-            "Other\nweapons": "29.0",
+            "Hands, fists, feet, etc.2": "26.0",
+            "Knives or cutting instruments": "28.0",
+            "Other weapons": "29.0",
             "Population": "4544125",
             "Rifles": "10.0",
             "Shotguns": "8.0",
-            "Total\nfirearms": "402.0",
-            "Total\nmurders1": "485.0"
+            "Total firearms": "402.0",
+            "Total murders1": "485.0"
         },
         "Name": "Louisiana",
         "alcoholserved": "partial ban",
@@ -1708,16 +1708,16 @@ var state_data_JSON = {
             "Total murders1": "209.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "69.0",
+            "Firearms (type unknown)": "69.0",
             "Handguns": "52.0",
-            "Hands, fists,\nfeet, etc.2": "9.0",
-            "Knives or\ncutting\ninstruments": "30.0",
-            "Other\nweapons": "22.0",
+            "Hands, fists, feet, etc.2": "9.0",
+            "Knives or cutting instruments": "30.0",
+            "Other weapons": "22.0",
             "Population": "6563259",
             "Rifles": "0.0",
             "Shotguns": "1.0",
-            "Total\nfirearms": "122.0",
-            "Total\nmurders1": "183.0"
+            "Total firearms": "122.0",
+            "Total murders1": "183.0"
         },
         "Name": "Massachusetts",
         "alcoholserved": "allowed",
@@ -1803,16 +1803,16 @@ var state_data_JSON = {
             "Total murders1": "424.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "3.0",
+            "Firearms (type unknown)": "3.0",
             "Handguns": "262.0",
-            "Hands, fists,\nfeet, etc.2": "17.0",
-            "Knives or\ncutting\ninstruments": "75.0",
-            "Other\nweapons": "34.0",
+            "Hands, fists, feet, etc.2": "17.0",
+            "Knives or cutting instruments": "75.0",
+            "Other weapons": "34.0",
             "Population": "5787998",
             "Rifles": "2.0",
             "Shotguns": "5.0",
-            "Total\nfirearms": "272.0",
-            "Total\nmurders1": "398.0"
+            "Total firearms": "272.0",
+            "Total murders1": "398.0"
         },
         "Name": "Maryland",
         "alcoholserved": "allowed",
@@ -1898,16 +1898,16 @@ var state_data_JSON = {
             "Total murders1": "24.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "7.0",
+            "Firearms (type unknown)": "7.0",
             "Handguns": "3.0",
-            "Hands, fists,\nfeet, etc.2": "2.0",
-            "Knives or\ncutting\ninstruments": "4.0",
-            "Other\nweapons": "7.0",
+            "Hands, fists, feet, etc.2": "2.0",
+            "Knives or cutting instruments": "4.0",
+            "Other weapons": "7.0",
             "Population": "1327585",
             "Rifles": "1.0",
             "Shotguns": "1.0",
-            "Total\nfirearms": "12.0",
-            "Total\nmurders1": "25.0"
+            "Total firearms": "12.0",
+            "Total murders1": "25.0"
         },
         "Name": "Maine",
         "alcoholserved": "ban",
@@ -1993,16 +1993,16 @@ var state_data_JSON = {
             "Total murders1": "558.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "139.0",
+            "Firearms (type unknown)": "139.0",
             "Handguns": "267.0",
-            "Hands, fists,\nfeet, etc.2": "31.0",
-            "Knives or\ncutting\ninstruments": "43.0",
-            "Other\nweapons": "89.0",
+            "Hands, fists, feet, etc.2": "31.0",
+            "Knives or cutting instruments": "43.0",
+            "Other weapons": "89.0",
             "Population": "9877670",
             "Rifles": "29.0",
             "Shotguns": "15.0",
-            "Total\nfirearms": "450.0",
-            "Total\nmurders1": "613.0"
+            "Total firearms": "450.0",
+            "Total murders1": "613.0"
         },
         "Name": "Michigan",
         "alcoholserved": "ban",
@@ -2088,16 +2088,16 @@ var state_data_JSON = {
             "Total murders1": "91.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "1.0",
+            "Firearms (type unknown)": "1.0",
             "Handguns": "36.0",
-            "Hands, fists,\nfeet, etc.2": "3.0",
-            "Knives or\ncutting\ninstruments": "12.0",
-            "Other\nweapons": "12.0",
+            "Hands, fists, feet, etc.2": "3.0",
+            "Knives or cutting instruments": "12.0",
+            "Other weapons": "12.0",
             "Population": "5310737",
             "Rifles": "3.0",
             "Shotguns": "3.0",
-            "Total\nfirearms": "43.0",
-            "Total\nmurders1": "70.0"
+            "Total firearms": "43.0",
+            "Total murders1": "70.0"
         },
         "Name": "Minnesota",
         "alcoholserved": "allowed",
@@ -2183,16 +2183,16 @@ var state_data_JSON = {
             "Total murders1": "419.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "96.0",
+            "Firearms (type unknown)": "96.0",
             "Handguns": "158.0",
-            "Hands, fists,\nfeet, etc.2": "18.0",
-            "Knives or\ncutting\ninstruments": "28.0",
-            "Other\nweapons": "42.0",
+            "Hands, fists, feet, etc.2": "18.0",
+            "Knives or cutting instruments": "28.0",
+            "Other weapons": "42.0",
             "Population": "5996092",
             "Rifles": "13.0",
             "Shotguns": "9.0",
-            "Total\nfirearms": "276.0",
-            "Total\nmurders1": "364.0"
+            "Total firearms": "276.0",
+            "Total murders1": "364.0"
         },
         "Name": "Missouri",
         "alcoholserved": "partial ban",
@@ -2278,16 +2278,16 @@ var state_data_JSON = {
             "Total murders1": "165.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "7.0",
+            "Firearms (type unknown)": "7.0",
             "Handguns": "121.0",
-            "Hands, fists,\nfeet, etc.2": "9.0",
-            "Knives or\ncutting\ninstruments": "26.0",
-            "Other\nweapons": "14.0",
+            "Hands, fists, feet, etc.2": "9.0",
+            "Knives or cutting instruments": "26.0",
+            "Other weapons": "14.0",
             "Population": "2969137",
             "Rifles": "6.0",
             "Shotguns": "4.0",
-            "Total\nfirearms": "138.0",
-            "Total\nmurders1": "187.0"
+            "Total firearms": "138.0",
+            "Total murders1": "187.0"
         },
         "Name": "Mississippi",
         "alcoholserved": "partial ban",
@@ -2373,16 +2373,16 @@ var state_data_JSON = {
             "Total murders1": "21.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "1.0",
+            "Firearms (type unknown)": "1.0",
             "Handguns": "2.0",
-            "Hands, fists,\nfeet, etc.2": "2.0",
-            "Knives or\ncutting\ninstruments": "4.0",
-            "Other\nweapons": "5.0",
+            "Hands, fists, feet, etc.2": "2.0",
+            "Knives or cutting instruments": "4.0",
+            "Other weapons": "5.0",
             "Population": "990735",
             "Rifles": "3.0",
             "Shotguns": "1.0",
-            "Total\nfirearms": "7.0",
-            "Total\nmurders1": "18.0"
+            "Total firearms": "7.0",
+            "Total murders1": "18.0"
         },
         "Name": "Montana",
         "alcoholserved": "ban",
@@ -2468,16 +2468,16 @@ var state_data_JSON = {
             "Total murders1": "445.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "55.0",
+            "Firearms (type unknown)": "55.0",
             "Handguns": "235.0",
-            "Hands, fists,\nfeet, etc.2": "37.0",
-            "Knives or\ncutting\ninstruments": "60.0",
-            "Other\nweapons": "57.0",
+            "Hands, fists, feet, etc.2": "37.0",
+            "Knives or cutting instruments": "60.0",
+            "Other weapons": "57.0",
             "Population": "9559048",
             "Rifles": "26.0",
             "Shotguns": "19.0",
-            "Total\nfirearms": "335.0",
-            "Total\nmurders1": "489.0"
+            "Total firearms": "335.0",
+            "Total murders1": "489.0"
         },
         "Name": "North Carolina",
         "alcoholserved": "ban",
@@ -2563,16 +2563,16 @@ var state_data_JSON = {
             "Total murders1": "9.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "3.0",
+            "Firearms (type unknown)": "3.0",
             "Handguns": "3.0",
-            "Hands, fists,\nfeet, etc.2": "2.0",
-            "Knives or\ncutting\ninstruments": "4.0",
-            "Other\nweapons": "0.0",
+            "Hands, fists, feet, etc.2": "2.0",
+            "Knives or cutting instruments": "4.0",
+            "Other weapons": "0.0",
             "Population": "674363",
             "Rifles": "0.0",
             "Shotguns": "0.0",
-            "Total\nfirearms": "6.0",
-            "Total\nmurders1": "12.0"
+            "Total firearms": "6.0",
+            "Total murders1": "12.0"
         },
         "Name": "North Dakota",
         "alcoholserved": "ban",
@@ -2658,16 +2658,16 @@ var state_data_JSON = {
             "Total murders1": "51.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "4.0",
+            "Firearms (type unknown)": "4.0",
             "Handguns": "35.0",
-            "Hands, fists,\nfeet, etc.2": "7.0",
-            "Knives or\ncutting\ninstruments": "7.0",
-            "Other\nweapons": "9.0",
+            "Hands, fists, feet, etc.2": "7.0",
+            "Knives or cutting instruments": "7.0",
+            "Other weapons": "9.0",
             "Population": "1829696",
             "Rifles": "2.0",
             "Shotguns": "1.0",
-            "Total\nfirearms": "42.0",
-            "Total\nmurders1": "65.0"
+            "Total firearms": "42.0",
+            "Total murders1": "65.0"
         },
         "Name": "Nebraska",
         "alcoholserved": "partial ban",
@@ -2753,16 +2753,16 @@ var state_data_JSON = {
             "Total murders1": "13.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "2.0",
+            "Firearms (type unknown)": "2.0",
             "Handguns": "1.0",
-            "Hands, fists,\nfeet, etc.2": "0.0",
-            "Knives or\ncutting\ninstruments": "4.0",
-            "Other\nweapons": "6.0",
+            "Hands, fists, feet, etc.2": "0.0",
+            "Knives or cutting instruments": "4.0",
+            "Other weapons": "6.0",
             "Population": "1316843",
             "Rifles": "2.0",
             "Shotguns": "1.0",
-            "Total\nfirearms": "6.0",
-            "Total\nmurders1": "16.0"
+            "Total firearms": "6.0",
+            "Total murders1": "16.0"
         },
         "Name": "New Hampshire",
         "alcoholserved": "allowed",
@@ -2848,16 +2848,16 @@ var state_data_JSON = {
             "Total murders1": "363.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "25.0",
+            "Firearms (type unknown)": "25.0",
             "Handguns": "238.0",
-            "Hands, fists,\nfeet, etc.2": "18.0",
-            "Knives or\ncutting\ninstruments": "51.0",
-            "Other\nweapons": "41.0",
+            "Hands, fists, feet, etc.2": "18.0",
+            "Knives or cutting instruments": "51.0",
+            "Other weapons": "41.0",
             "Population": "8803388",
             "Rifles": "1.0",
             "Shotguns": "5.0",
-            "Total\nfirearms": "269.0",
-            "Total\nmurders1": "379.0"
+            "Total firearms": "269.0",
+            "Total murders1": "379.0"
         },
         "Name": "New Jersey",
         "alcoholserved": "allowed",
@@ -2943,16 +2943,16 @@ var state_data_JSON = {
             "Total murders1": "118.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "11.0",
+            "Firearms (type unknown)": "11.0",
             "Handguns": "45.0",
-            "Hands, fists,\nfeet, etc.2": "8.0",
-            "Knives or\ncutting\ninstruments": "21.0",
-            "Other\nweapons": "32.0",
+            "Hands, fists, feet, etc.2": "8.0",
+            "Knives or cutting instruments": "21.0",
+            "Other weapons": "32.0",
             "Population": "2064767",
             "Rifles": "2.0",
             "Shotguns": "2.0",
-            "Total\nfirearms": "60.0",
-            "Total\nmurders1": "121.0"
+            "Total firearms": "60.0",
+            "Total murders1": "121.0"
         },
         "Name": "New Mexico",
         "alcoholserved": "partial ban",
@@ -3038,16 +3038,16 @@ var state_data_JSON = {
             "Total murders1": "158.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "26.0",
+            "Firearms (type unknown)": "26.0",
             "Handguns": "46.0",
-            "Hands, fists,\nfeet, etc.2": "9.0",
-            "Knives or\ncutting\ninstruments": "20.0",
-            "Other\nweapons": "25.0",
+            "Hands, fists, feet, etc.2": "9.0",
+            "Knives or cutting instruments": "20.0",
+            "Other weapons": "25.0",
             "Population": "2703758",
             "Rifles": "2.0",
             "Shotguns": "1.0",
-            "Total\nfirearms": "75.0",
-            "Total\nmurders1": "129.0"
+            "Total firearms": "75.0",
+            "Total murders1": "129.0"
         },
         "Name": "Nevada",
         "alcoholserved": "allowed",
@@ -3133,16 +3133,16 @@ var state_data_JSON = {
             "Total murders1": "860.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "30.0",
+            "Firearms (type unknown)": "30.0",
             "Handguns": "394.0",
-            "Hands, fists,\nfeet, etc.2": "26.0",
-            "Knives or\ncutting\ninstruments": "160.0",
-            "Other\nweapons": "143.0",
+            "Hands, fists, feet, etc.2": "26.0",
+            "Knives or cutting instruments": "160.0",
+            "Other weapons": "143.0",
             "Population": "19399242",
             "Rifles": "5.0",
             "Shotguns": "16.0",
-            "Total\nfirearms": "445.0",
-            "Total\nmurders1": "774.0"
+            "Total firearms": "445.0",
+            "Total murders1": "774.0"
         },
         "Name": "New York",
         "alcoholserved": "allowed",
@@ -3228,16 +3228,16 @@ var state_data_JSON = {
             "Total murders1": "460.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "136.0",
+            "Firearms (type unknown)": "136.0",
             "Handguns": "187.0",
-            "Hands, fists,\nfeet, etc.2": "20.0",
-            "Knives or\ncutting\ninstruments": "44.0",
-            "Other\nweapons": "80.0",
+            "Hands, fists, feet, etc.2": "20.0",
+            "Knives or cutting instruments": "44.0",
+            "Other weapons": "80.0",
             "Population": "11538290",
             "Rifles": "8.0",
             "Shotguns": "13.0",
-            "Total\nfirearms": "344.0",
-            "Total\nmurders1": "488.0"
+            "Total firearms": "344.0",
+            "Total murders1": "488.0"
         },
         "Name": "Ohio",
         "alcoholserved": "ban",
@@ -3323,16 +3323,16 @@ var state_data_JSON = {
             "Total murders1": "188.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "15.0",
+            "Firearms (type unknown)": "15.0",
             "Handguns": "99.0",
-            "Hands, fists,\nfeet, etc.2": "26.0",
-            "Knives or\ncutting\ninstruments": "26.0",
-            "Other\nweapons": "21.0",
+            "Hands, fists, feet, etc.2": "26.0",
+            "Knives or cutting instruments": "26.0",
+            "Other weapons": "21.0",
             "Population": "3759482",
             "Rifles": "8.0",
             "Shotguns": "9.0",
-            "Total\nfirearms": "131.0",
-            "Total\nmurders1": "204.0"
+            "Total firearms": "131.0",
+            "Total murders1": "204.0"
         },
         "Name": "Oklahoma",
         "alcoholserved": "partial ban",
@@ -3418,16 +3418,16 @@ var state_data_JSON = {
             "Total murders1": "78.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "24.0",
+            "Firearms (type unknown)": "24.0",
             "Handguns": "13.0",
-            "Hands, fists,\nfeet, etc.2": "5.0",
-            "Knives or\ncutting\ninstruments": "22.0",
-            "Other\nweapons": "10.0",
+            "Hands, fists, feet, etc.2": "5.0",
+            "Knives or cutting instruments": "22.0",
+            "Other weapons": "10.0",
             "Population": "3838212",
             "Rifles": "1.0",
             "Shotguns": "2.0",
-            "Total\nfirearms": "40.0",
-            "Total\nmurders1": "77.0"
+            "Total firearms": "40.0",
+            "Total murders1": "77.0"
         },
         "Name": "Oregon",
         "alcoholserved": "allowed",
@@ -3513,16 +3513,16 @@ var state_data_JSON = {
             "Total murders1": "646.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "64.0",
+            "Firearms (type unknown)": "64.0",
             "Handguns": "379.0",
-            "Hands, fists,\nfeet, etc.2": "27.0",
-            "Knives or\ncutting\ninstruments": "73.0",
-            "Other\nweapons": "66.0",
+            "Hands, fists, feet, etc.2": "27.0",
+            "Knives or cutting instruments": "73.0",
+            "Other weapons": "66.0",
             "Population": "12711308",
             "Rifles": "8.0",
             "Shotguns": "19.0",
-            "Total\nfirearms": "470.0",
-            "Total\nmurders1": "636.0"
+            "Total firearms": "470.0",
+            "Total murders1": "636.0"
         },
         "Name": "Pennsylvania",
         "alcoholserved": "allowed",
@@ -3608,16 +3608,16 @@ var state_data_JSON = {
             "Total murders1": "29.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "4.0",
+            "Firearms (type unknown)": "4.0",
             "Handguns": "1.0",
-            "Hands, fists,\nfeet, etc.2": "0.0",
-            "Knives or\ncutting\ninstruments": "5.0",
-            "Other\nweapons": "4.0",
+            "Hands, fists, feet, etc.2": "0.0",
+            "Knives or cutting instruments": "5.0",
+            "Other weapons": "4.0",
             "Population": "1052769",
             "Rifles": "0.0",
             "Shotguns": "0.0",
-            "Total\nfirearms": "5.0",
-            "Total\nmurders1": "14.0"
+            "Total firearms": "5.0",
+            "Total murders1": "14.0"
         },
         "Name": "Rhode Island",
         "alcoholserved": "allowed",
@@ -3703,16 +3703,16 @@ var state_data_JSON = {
             "Total murders1": "280.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "75.0",
+            "Firearms (type unknown)": "75.0",
             "Handguns": "126.0",
-            "Hands, fists,\nfeet, etc.2": "18.0",
-            "Knives or\ncutting\ninstruments": "38.0",
-            "Other\nweapons": "40.0",
+            "Hands, fists, feet, etc.2": "18.0",
+            "Knives or cutting instruments": "38.0",
+            "Other weapons": "40.0",
             "Population": "4635835",
             "Rifles": "10.0",
             "Shotguns": "12.0",
-            "Total\nfirearms": "223.0",
-            "Total\nmurders1": "319.0"
+            "Total firearms": "223.0",
+            "Total murders1": "319.0"
         },
         "Name": "South Carolina",
         "alcoholserved": "ban",
@@ -3798,16 +3798,16 @@ var state_data_JSON = {
             "Total murders1": "14.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "1.0",
+            "Firearms (type unknown)": "1.0",
             "Handguns": "3.0",
-            "Hands, fists,\nfeet, etc.2": "3.0",
-            "Knives or\ncutting\ninstruments": "4.0",
-            "Other\nweapons": "3.0",
+            "Hands, fists, feet, etc.2": "3.0",
+            "Knives or cutting instruments": "4.0",
+            "Other weapons": "3.0",
             "Population": "816223",
             "Rifles": "1.0",
             "Shotguns": "0.0",
-            "Total\nfirearms": "5.0",
-            "Total\nmurders1": "15.0"
+            "Total firearms": "5.0",
+            "Total murders1": "15.0"
         },
         "Name": "South Dakota",
         "alcoholserved": "partial ban",
@@ -3893,16 +3893,16 @@ var state_data_JSON = {
             "Total murders1": "356.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "52.0",
+            "Firearms (type unknown)": "52.0",
             "Handguns": "172.0",
-            "Hands, fists,\nfeet, etc.2": "16.0",
-            "Knives or\ncutting\ninstruments": "51.0",
-            "Other\nweapons": "62.0",
+            "Hands, fists, feet, etc.2": "16.0",
+            "Knives or cutting instruments": "51.0",
+            "Other weapons": "62.0",
             "Population": "6356673",
             "Rifles": "7.0",
             "Shotguns": "13.0",
-            "Total\nfirearms": "244.0",
-            "Total\nmurders1": "373.0"
+            "Total firearms": "244.0",
+            "Total murders1": "373.0"
         },
         "Name": "Tennessee",
         "alcoholserved": "allowed",
@@ -3988,16 +3988,16 @@ var state_data_JSON = {
             "Total murders1": "1246.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "117.0",
+            "Firearms (type unknown)": "117.0",
             "Handguns": "497.0",
-            "Hands, fists,\nfeet, etc.2": "81.0",
-            "Knives or\ncutting\ninstruments": "175.0",
-            "Other\nweapons": "134.0",
+            "Hands, fists, feet, etc.2": "81.0",
+            "Knives or cutting instruments": "175.0",
+            "Other weapons": "134.0",
             "Population": "25242683",
             "Rifles": "37.0",
             "Shotguns": "48.0",
-            "Total\nfirearms": "699.0",
-            "Total\nmurders1": "1089.0"
+            "Total firearms": "699.0",
+            "Total murders1": "1089.0"
         },
         "Name": "Texas",
         "alcoholserved": "partial ban",
@@ -4083,16 +4083,16 @@ var state_data_JSON = {
             "Total murders1": "52.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "6.0",
+            "Firearms (type unknown)": "6.0",
             "Handguns": "15.0",
-            "Hands, fists,\nfeet, etc.2": "11.0",
-            "Knives or\ncutting\ninstruments": "5.0",
-            "Other\nweapons": "9.0",
+            "Hands, fists, feet, etc.2": "11.0",
+            "Knives or cutting instruments": "5.0",
+            "Other weapons": "9.0",
             "Population": "2775093",
             "Rifles": "4.0",
             "Shotguns": "1.0",
-            "Total\nfirearms": "26.0",
-            "Total\nmurders1": "51.0"
+            "Total firearms": "26.0",
+            "Total murders1": "51.0"
         },
         "Name": "Utah",
         "alcoholserved": "allowed",
@@ -4178,16 +4178,16 @@ var state_data_JSON = {
             "Total murders1": "369.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "73.0",
+            "Firearms (type unknown)": "73.0",
             "Handguns": "110.0",
-            "Hands, fists,\nfeet, etc.2": "21.0",
-            "Knives or\ncutting\ninstruments": "33.0",
-            "Other\nweapons": "41.0",
+            "Hands, fists, feet, etc.2": "21.0",
+            "Knives or cutting instruments": "33.0",
+            "Other weapons": "41.0",
             "Population": "8025105",
             "Rifles": "10.0",
             "Shotguns": "15.0",
-            "Total\nfirearms": "208.0",
-            "Total\nmurders1": "303.0"
+            "Total firearms": "208.0",
+            "Total murders1": "303.0"
         },
         "Name": "Virginia",
         "alcoholserved": "allowed",
@@ -4273,16 +4273,16 @@ var state_data_JSON = {
             "Total murders1": "7.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "2.0",
+            "Firearms (type unknown)": "2.0",
             "Handguns": "2.0",
-            "Hands, fists,\nfeet, etc.2": "0.0",
-            "Knives or\ncutting\ninstruments": "2.0",
-            "Other\nweapons": "2.0",
+            "Hands, fists, feet, etc.2": "0.0",
+            "Knives or cutting instruments": "2.0",
+            "Other weapons": "2.0",
             "Population": "625916",
             "Rifles": "0.0",
             "Shotguns": "0.0",
-            "Total\nfirearms": "4.0",
-            "Total\nmurders1": "8.0"
+            "Total firearms": "4.0",
+            "Total murders1": "8.0"
         },
         "Name": "Vermont",
         "alcoholserved": "allowed",
@@ -4368,16 +4368,16 @@ var state_data_JSON = {
             "Total murders1": "151.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "17.0",
+            "Firearms (type unknown)": "17.0",
             "Handguns": "58.0",
-            "Hands, fists,\nfeet, etc.2": "17.0",
-            "Knives or\ncutting\ninstruments": "29.0",
-            "Other\nweapons": "36.0",
+            "Hands, fists, feet, etc.2": "17.0",
+            "Knives or cutting instruments": "29.0",
+            "Other weapons": "36.0",
             "Population": "6743636",
             "Rifles": "1.0",
             "Shotguns": "3.0",
-            "Total\nfirearms": "79.0",
-            "Total\nmurders1": "161.0"
+            "Total firearms": "79.0",
+            "Total murders1": "161.0"
         },
         "Name": "Washington",
         "alcoholserved": "ban",
@@ -4463,16 +4463,16 @@ var state_data_JSON = {
             "Total murders1": "151.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "10.0",
+            "Firearms (type unknown)": "10.0",
             "Handguns": "60.0",
-            "Hands, fists,\nfeet, etc.2": "21.0",
-            "Knives or\ncutting\ninstruments": "21.0",
-            "Other\nweapons": "13.0",
+            "Hands, fists, feet, etc.2": "21.0",
+            "Knives or cutting instruments": "21.0",
+            "Other weapons": "13.0",
             "Population": "5689591",
             "Rifles": "7.0",
             "Shotguns": "3.0",
-            "Total\nfirearms": "80.0",
-            "Total\nmurders1": "135.0"
+            "Total firearms": "80.0",
+            "Total murders1": "135.0"
         },
         "Name": "Wisconsin",
         "alcoholserved": "partial ban",
@@ -4558,16 +4558,16 @@ var state_data_JSON = {
             "Total murders1": "55.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "7.0",
+            "Firearms (type unknown)": "7.0",
             "Handguns": "23.0",
-            "Hands, fists,\nfeet, etc.2": "7.0",
-            "Knives or\ncutting\ninstruments": "11.0",
-            "Other\nweapons": "13.0",
+            "Hands, fists, feet, etc.2": "7.0",
+            "Knives or cutting instruments": "11.0",
+            "Other weapons": "13.0",
             "Population": "1854019",
             "Rifles": "10.0",
             "Shotguns": "3.0",
-            "Total\nfirearms": "43.0",
-            "Total\nmurders1": "74.0"
+            "Total firearms": "43.0",
+            "Total murders1": "74.0"
         },
         "Name": "West Virginia",
         "alcoholserved": "allowed",
@@ -4653,16 +4653,16 @@ var state_data_JSON = {
             "Total murders1": "8.0"
         },
         "2011": {
-            "Firearms\n(type\nunknown)": "4.0",
+            "Firearms (type unknown)": "4.0",
             "Handguns": "7.0",
-            "Hands, fists,\nfeet, etc.2": "3.0",
-            "Knives or\ncutting\ninstruments": "0.0",
-            "Other\nweapons": "1.0",
+            "Hands, fists, feet, etc.2": "3.0",
+            "Knives or cutting instruments": "0.0",
+            "Other weapons": "1.0",
             "Population": "564367",
             "Rifles": "0.0",
             "Shotguns": "0.0",
-            "Total\nfirearms": "11.0",
-            "Total\nmurders1": "15.0"
+            "Total firearms": "11.0",
+            "Total murders1": "15.0"
         },
         "Name": "Wyoming",
         "alcoholserved": "partial ban",

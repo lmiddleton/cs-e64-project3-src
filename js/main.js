@@ -161,21 +161,32 @@ function gunMurdersPer(dataObject, state, year, gunType, per) {
  ***************************GUN LAW MAP***************************
  *****************************************************************/
 
+/*updates the gun law map key based on the law type selection*/
+function updateLawKey(){
+	
+}
+
 /*re-renders the map for the selected year*/
-function drawMapGuns(year, lawType, dataObject) {
+function drawMapGuns(year, lawType, name, dataObject) {
 	//clear map div so map is not duplicated
 	$("#map2").empty();
 
+	//clear out popup template
+	newTemplate = "";
+
 	var type;
+	//var name;
 	
 	//do all necessary calculations of data here
 	for(state in dataObject) {
 		type = dataObject[state][lawType];
 		if (lawType == "alcoholserved") {
-		
-			//console.log(gunMurdersPer100K);
+			name = "Alcohol Served";
 			if(type == "allowed"){
 				dataObject[state]["fillKey"] = "AWFUL";
+			}
+			else if(type == "partial ban"){
+				dataObject[state]["fillKey"] = "GOOD";
 			}
 			else if(type == "ban"){
 				dataObject[state]["fillKey"] = "GREAT";
@@ -185,8 +196,7 @@ function drawMapGuns(year, lawType, dataObject) {
 			}
 		}
 		else if (lawType == "arenas") {
-		
-			//console.log(gunMurdersPer100K);
+			name = "Arenas";
 			if(type == "allowed"){
 				dataObject[state]["fillKey"] = "AWFUL";
 			}
@@ -198,15 +208,14 @@ function drawMapGuns(year, lawType, dataObject) {
 			}
 		}
 		else if (lawType == "churches") {
-		
-			//console.log(gunMurdersPer100K);
+			name="Churches";
 			if(type == "allowed"){
 				dataObject[state]["fillKey"] = "AWFUL";
 			}
 			else if(type == "ban"){
 				dataObject[state]["fillKey"] = "GREAT";
 			}
-			else if(type == "partial ban"){
+			else if(type == "partial"){
 				dataObject[state]["fillKey"] = "GOOD";
 			}
 			else if(type == "unclear"){
@@ -214,24 +223,22 @@ function drawMapGuns(year, lawType, dataObject) {
 			}
 		}
 		else if (lawType == "concealedtype") {
-		
-			//console.log(gunMurdersPer100K);
-			if(type == "allowed"){
+			name="Concealed Type";
+			if(type == "unrestricted"){
 				dataObject[state]["fillKey"] = "AWFUL";
 			}
-			else if(type == "ban"){
+			else if(type == "may issue"){
 				dataObject[state]["fillKey"] = "GREAT";
 			}
-			else if(type == "partial ban"){
+			else if(type == "shall issue"){
 				dataObject[state]["fillKey"] = "GOOD";
 			}
-			else if(type == "unclear"){
+			else if(type == "no issue"){
 				dataObject[state]["fillKey"] = "NONE";
 			}
 		}
 		else if (lawType == "gunshowregulation") {
-		
-			//console.log(gunMurdersPer100K);
+			name = "Gun Shows";
 			if(type == "gsbg"){
 				dataObject[state]["fillKey"] = "GREAT";
 			}
@@ -252,8 +259,7 @@ function drawMapGuns(year, lawType, dataObject) {
 			}
 		}
 		else if (lawType == "gunsoncampus") {
-		
-			//console.log(gunMurdersPer100K);
+			name = "College Campuses";
 			if(type == "allow"){
 				dataObject[state]["fillKey"] = "AWFUL";
 			}
@@ -267,27 +273,9 @@ function drawMapGuns(year, lawType, dataObject) {
 				dataObject[state]["fillKey"] = "NONE";
 			}
 		}
-		else if (lawType == "handgunpermit") {
-		
-			//console.log(gunMurdersPer100K);
-			if(type == "both"){
-				dataObject[state]["fillKey"] = "GOOD";
-			}
-			else if(type == "license"){
-				dataObject[state]["fillKey"] = "GREAT";
-			}
-			else if(type == "n"){
-				dataObject[state]["fillKey"] = "NONE";
-			}
-			else if(type == "permit"){
-				dataObject[state]["fillKey"] = "GREAT";
-			}
-			else if(type == "y"){
-				dataObject[state]["fillKey"] = "GREAT";
-			}
-		}
 		else if (lawType == "hospitals") {
-		
+			name = "Hospitals";
+			console.log(type);
 			if(type == "allowed"){
 				dataObject[state]["fillKey"] = "NONE";
 			}
@@ -301,10 +289,163 @@ function drawMapGuns(year, lawType, dataObject) {
 				dataObject[state]["fillKey"] = "NONE";
 			}
 		}
+		else if (lawType == "hownerlicense") {
+			name = "";
+			if(type == "y"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "n"){
+				dataObject[state]["fillKey"] = "AWFUL";
+			}
+		}
+		else if (lawType == "hpermitpurchase") {
+			name = "";
+			if(type == "y"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "n"){
+				dataObject[state]["fillKey"] = "AWFUL";
+			}
+		}
+		else if (lawType == "hregistration") {
+			name = "";
+			if(type == "y"){
+				dataObject[state]["fillKey"] = "AWFUL";
+			}
+			else if(type == "n"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "record"){
+				dataObject[state]["fillKey"] = "GOOD";
+			}
+			else if(type == "prohibit"){
+				dataObject[state]["fillKey"] = "NONE";
+			}
+		}
+		else if (lawType == "lockingdevice") {
+			name = "";
+			if(type == "regulation"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "no regulation"){
+				dataObject[state]["fillKey"] = "AWFUL";
+			}
+		}
+		else if (lawType == "lockstorage") {
+			name = "";
+			if(type == "no regulation"){
+				dataObject[state]["fillKey"] = "AWFUL";
+			}
+			else if(type == "minor regulation"){
+				dataObject[state]["fillKey"] = "GOOD";
+			}
+			else if(type == "unclear"){
+				dataObject[state]["fillKey"] = "NONE";
+			}
+			else if(type == "regulation"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+		}
+		else if (lawType == "loststolen") {
+			name = "";
+			if(type == "no regulation"){
+				dataObject[state]["fillKey"] = "AWFUL";
+			}
+			else if(type == "regulation"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+		}
+		else if (lawType == "opencarryhandguns") {
+			name = "";
+			if(type == "allow"){
+				dataObject[state]["fillKey"] = "AWFUL";
+			}
+			else if(type == "prohibit"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "permit"){
+				dataObject[state]["fillKey"] = "GOOD";
+			}
+		}
+		else if (lawType == "opencarrylongguns") {
+			name = "";
+			if(type == "allow"){
+				dataObject[state]["fillKey"] = "AWFUL";
+			}
+			else if (type == "prohibit"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+		}
+		else if (lawType == "privatesellerregulation") {
+			name = "";
+			if(type == "no regulation"){
+				dataObject[state]["fillKey"] = "AWFUL";
+			}
+			else if(type == "ubg, record"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "vbg"){
+				dataObject[state]["fillKey"] = "GOOD";
+			}
+			else if(type == "record"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "bg"){
+				dataObject[state]["fillKey"] = "GOOD";
+			}
+		}
+		else if (lawType == "rownerlicense") {
+			name = "";
+			if(type == "y"){
+				dataObject[state]["fillKey"] = "AWFUL";
+			}
+			else if(type == "n"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+		}
+		else if (lawType == "rpermitpurchase") {
+			name = "";
+			if(type == "y"){
+				dataObject[state]["fillKey"] = "AWFUL";
+			}
+			else if(type == "n"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+		}
+		else if (lawType == "rregistration") {
+			name = "";
+			if(type == "y"){
+				dataObject[state]["fillKey"] = "AWFUL";
+			}
+			else if(type == "n"){
+				dataObject[state]["fillKey"] = "GOOD";
+			}
+			else if(type == "prohibit"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+		}
+		else if (lawType == "standgroundlaw") {
+			name = "";
+			if(type == "y"){
+				dataObject[state]["fillKey"] = "AWFUL";
+			}
+			else if(type == "n"){
+				dataObject[state]["fillKey"] = "GREAT";
+			}
+			else if(type == "yv"){
+				dataObject[state]["fillKey"] = "GOOD";
+			}
+			else if(type == "common"){
+				dataObject[state]["fillKey"] = "NONE";
+			}
+		}
 	}
 
+	console.log(name);
+
+
 	//set up popup tmeplate
-	var newTemplate = '<div class="hoverinfo"><strong><%= geography.properties.name %></strong> <% if (data["alcoholserved"]) { %><hr/>  Alcohol: <%= gun_key["alcoholserved"] %> <% } %><br/>Total Firearm Homicides: <%= data[' + year + ']["Total firearms"] %><br/>Population: <%= data[' + year + ']["Population"] %><br/><strong>Firearm Homicides Per 100K People:</strong> <%= data[' + year + ']["GunMurdersPer100K"] %></div>';
+	var newTemplate = '<div class="hoverinfo"><strong><%= geography.properties.name %></strong> <% if (data[lawType]) { %><hr/> <%= lawType %>: <%= data[lawType] %> <% } %></div>';
 
 	//set up map variable
 	map2 = new Map({
@@ -358,8 +499,18 @@ function drawMapGuns(year, lawType, dataObject) {
 		}
     });
 */
-	
-	
+}
+
+/*law type dropdown handler*/
+function initLawTypeSelect() {
+	$("#law-type").change(function() {
+		//find which was selected
+		var lawType = this.value;
+		//var lawName = this.html;
+		//console.log(lawName);
+		//redraw map
+		drawMapGuns(yearShown, lawType, name, state_data_JSON);
+	});
 }
  
 /******************************************************************
@@ -384,7 +535,10 @@ function drawMapGuns(year, lawType, dataObject) {
 var map;
 var gunTypeShown = "all";
 var yearShown = "2006";
+//global variables for map2
 var lawType = "alcoholserved";
+//var lawName;
+var name = "Alcohol Served";
 
 //global variable for map2
 var map2;
@@ -398,8 +552,10 @@ window.onload = function() {
 	initGunTypeSelect();
 
 	//init map 2
-	//drawMap2();
-	drawMapGuns(yearShown, lawType, state_data_JSON);
+	drawMapGuns(yearShown, lawType, name, state_data_JSON);
+
+	//init map2 filters
+	initLawTypeSelect();
 
 	initTourBtn();
 

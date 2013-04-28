@@ -25,7 +25,7 @@
 		<h2>by Josh McElfresh and Lauren Middleton</h2>
 		<button>Take a Tour</button>
 		<h3 data-intro='Hello step one!' data-step='1'>
-			Use the filters to see the rates of firearm homicide per hundred thousand people for the selected year and firearm type. Click a state to see it's firearm homicide data over time. Click and drag over one or more points to see the breakdown of types for a range of years. Data from FBI.gov and census.gov.
+			Use the filters to see the rates of firearm homicide per hundred thousand people for the selected year and firearm type. Click a state to see it's firearm homicide data over time. Click and drag over one or more points to see the breakdown of types for a range of years. Firearm homicide and population data from FBI.gov and census.gov. Firearm law data and descriptions from a <a href="http://www.guardian.co.uk/world/interactive/2013/jan/15/gun-laws-united-states">guardian.co.uk visualization</a>.
 		</h3>
 	</div>
 
@@ -99,6 +99,30 @@
 
 	<div id="map2"></div>
 	<div id="control-panel2">
+		<select id="law-type">
+			<option value="all">All Regulations</option>
+			<option value="alcoholserved">Alcohol</option>
+			<option value="arenas">Sports Arenas</option>
+			<option value="churches">Places of Worship</option>
+			<option value="concealedtype">Carrying</option>
+			<option value="gunshowregulation">Gun Shows</option>
+			<option value="gunsoncampus">College Campuses</option>
+			<option value="hospitals">Hospitals</option>
+			<option value="hownerlicense">hownerlicense</option>
+			<option value="hpermitpurchase">hpermitpurchase</option>
+			<option value="hregistration">hregistration</option>
+			<option value="lockingdevice">Locking Device</option>
+			<option value="lockstorage">lockstorage</option>
+			<option value="loststolen">Lost/Stolen</option>
+			<option value="opencarryhandguns">opencarryhandguns</option>
+			<option value="opencarrylongguns">opencarrylongguns</option>
+			<option value="privatesellerregulation">privatesellerregulation</option>
+			<option value="rownerlicense">rownerlicense</option>
+			<option value="rpermitpurchase">rpermitpurchase</option>
+			<option value="rregistration">rregistration</option>
+			<option value="standgroundlaw">standgroundlaw</option>
+		</select>
+		<div id="law-description">Law description</div>
 		<div id="key2">
 			<span><strong>KEY TITLE</strong></span>
 			<br /><br />
