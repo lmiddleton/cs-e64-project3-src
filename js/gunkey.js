@@ -1,6 +1,6 @@
 var gun_key = {
         "alcoholserved": {
-            "name":"Establistments Serving Alchol",
+            "name":"Establishments Serving Alcohol",
             "allowed":{
                 "desc":"No specific regulation banning firearms at establishments serving alcohol.",
                 "rating":"NONE",

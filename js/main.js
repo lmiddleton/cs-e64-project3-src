@@ -488,35 +488,30 @@ function drawMapGuns(year, lawType, name, dataObject) {
 
 	//render the map
 	map2.render();
-
-	//update globals
-	//yearShown = year;
-	//gunTypeShown = gunType;
 	
 	// Re-render the graph every time a state is clicked
-	/*
-    map.$el.bind("map-click", function(e, data) {
-        console.log(data.geography.id);
-        
-        if (data.geography.id == "FL") {
-			$(".container").empty();
-			$("#bars").empty();
-			$("#linetitle").text("No data for Florida");
-			$("#bartitle").empty();
-		}
-		else {
-			console.log(data.geography.id);
-			$(".container").empty();
-			_STATE = data.geography.id;
-			drawGraph(_STATE);
-			//_YEAR = "2006";
-			$("#linetitle").text(state_data_JSON[_STATE]["Name"] + " Firearm Homicides by Year");
-			$("#bartitle").text(state_data_JSON[_STATE]["Name"] + " Homicides by Firearm Type - " + yearShown);
-			$("#bars").empty();
-			drawBars(_STATE,yearShown);	
-		}
+    map2.$el.bind("map-click", function(e, data) {
+        $('#state-law-details-parent').html('<span id="law-details-state">'); //clear out div
+
+        var state = data.geography.id;
+        var stateName = dataObject[state]["Name"];
+
+		var laws = ["alcoholserved", "arenas", "churches", "concealedtype", "gunshowregulation", "gunsoncampus", "hospitals", "hownerlicense", "hpermitpurchase", "hregistration", "lockingdevice", "lockstorage", "loststolen", "opencarryhandguns", "opencarrylongguns", "privatesellerregulation", "rownerlicense", "rpermitpurchase", "rregistration", "standgroundlaw"];
+
+		$('#law-details-state').append(stateName + ' Firearm Law Breakdown <br />');
+
+        for(i = 0; i < laws.length; i++){
+        	var lawIndex = laws[i];
+        	if(gun_key[lawIndex]){
+        		var lawName = gun_key[lawIndex]["name"];
+        		var lawCat = dataObject[state][lawIndex];
+        		var law = gun_key[lawIndex][lawCat]["name"];
+        		var lawDesc = gun_key[lawIndex][lawCat]["desc"];
+        	}
+        	
+        	$('#law-details-state').append('<strong>' + lawName + ': </strong>' +  law + '<br />' + lawDesc + '<br />');
+        }
     });
-*/
 }
 
 /*law type dropdown handler*/
