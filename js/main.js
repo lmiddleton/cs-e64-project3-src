@@ -162,8 +162,12 @@ function gunMurdersPer(dataObject, state, year, gunType, per) {
  *****************************************************************/
 
 /*updates the gun law map key based on the law type selection*/
-function updateLawKey(){
-	
+function updateLawKey(lawType, fillKey){
+	var obj = gun_key[lawType];
+	for (var i in obj) {
+		console.log(obj[i]["rating"]);
+		console.log(obj[i]["desc"]);
+	}
 }
 
 /*re-renders the map for the selected year*/
@@ -171,17 +175,33 @@ function drawMapGuns(year, lawType, name, dataObject) {
 	//clear map div so map is not duplicated
 	$("#map2").empty();
 
+	
+	
 	//clear out popup template
 	newTemplate = "";
 
 	var type;
 	//var name;
 	
+	var fillColors = {
+				'GREAT': '#0066FF',
+				'GOOD': '#99CCFF',
+				'NONE': '#FFFFFF',
+				'BAD': '#FF6666',
+				'AWFUL': '#CC0000',
+				'UNCLEAR':'#E5EEEE',
+				defaultFill: '#EFEFEF'
+			};
+			
+	updateLawKey(lawType, fillColors);
+	
 	//do all necessary calculations of data here
 	for(state in dataObject) {
 		type = dataObject[state][lawType];
+		dataObject[state]["fillKey"] = gun_key[lawType][type]["rating"];
+		/*
 		if (lawType == "alcoholserved") {
-			name = "Alcohol Served";
+			name = gun_key[lawType]["name"]
 			if(type == "allowed"){
 				dataObject[state]["fillKey"] = "AWFUL";
 			}
@@ -439,14 +459,19 @@ function drawMapGuns(year, lawType, name, dataObject) {
 				dataObject[state]["fillKey"] = "NONE";
 			}
 		}
+		*/
 	}
 
 	console.log(name);
 
+	// Insert the text description of the law into data
 
+	//state_data_JSON[lawdesc] = gun_key[data[lawType]];
+	
 	//set up popup tmeplate
-	var newTemplate = '<div class="hoverinfo"><strong><%= geography.properties.name %></strong> <% if (data[lawType]) { %><hr/> <%= lawType %>: <%= data[lawType] %> <% } %></div>';
-
+	var newTemplate = '<div class="hoverinfo"><strong><%= geography.properties.name %></strong> <% if (data[lawType]) { %><hr/> <%= lawType %>: <%= gun_key[lawType][data[lawType]]["name"] %> <% } %></div>';
+	//var newTemplate = '<div class="hoverinfo"><strong><%= geography.properties.name %></strong> <% if (data[' + lawType + ']) { %><hr/> <%= lawType %>: <%= ' + gun_key[0][lawType][ + 'data[lawType]' + ']' + '%> <% } %></div>';
+	
 	//set up map variable
 	map2 = new Map({
 		scope: 'usa',
@@ -457,14 +482,7 @@ function drawMapGuns(year, lawType, name, dataObject) {
         	highlightOnHover: true,
         	popupTemplate: _.template(newTemplate)
       },
-		fills: {
-			'GREAT': '#0066FF',
-			'GOOD': '#99CCFF',
-			'NONE': '#FFFFFF',
-			'BAD': '#FF6666',
-			'AWFUL': '#CC0000',
-			defaultFill: '#EFEFEF'
-		},
+		fills:fillColors,
 		data: state_data_JSON
 	});
 
