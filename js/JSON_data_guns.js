@@ -73,6 +73,7 @@ var state_data_JSON = {
             "Total murders1": "29.0"
         },
         "Name": "Alaska",
+        "smartgunlaws":"40",
         "alcoholserved": "ban",
         "arenas": "allowed",
         "churches": "allowed",
@@ -159,6 +160,7 @@ var state_data_JSON = {
             "Population": "4784762"
         },
         "Name": "Alabama",
+        "smartgunlaws":"24",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -254,6 +256,7 @@ var state_data_JSON = {
             "Total murders1": "153.0"
         },
         "Name": "Arkansas",
+        "smartgunlaws":"44",
         "alcoholserved": "ban",
         "arenas": "ban",
         "churches": "ban",
@@ -349,6 +352,7 @@ var state_data_JSON = {
             "Total murders1": "339.0"
         },
         "Name": "Arizona",
+        "smartgunlaws":"50",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -444,6 +448,7 @@ var state_data_JSON = {
             "Total murders1": "1790.0"
         },
         "Name": "California",
+        "smartgunlaws":"1",
         "alcoholserved": "allowed",
         "arenas": "unclear",
         "churches": "unclear",
@@ -539,6 +544,7 @@ var state_data_JSON = {
             "Total murders1": "147.0"
         },
         "Name": "Colorado",
+        "smartgunlaws":"27",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -634,6 +640,7 @@ var state_data_JSON = {
             "Total murders1": "128.0"
         },
         "Name": "Connecticut",
+        "smartgunlaws":"5",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -729,6 +736,7 @@ var state_data_JSON = {
             "Total murders1": "41.0"
         },
         "Name": "Delaware",
+        "smartgunlaws":"18",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -770,6 +778,7 @@ var state_data_JSON = {
             "Population": "18845967"
         },
         "Name": "Florida",
+        "smartgunlaws":"10",
         "alcoholserved": "ban",
         "arenas": "allowed",
         "churches": "allowed",
@@ -865,6 +874,7 @@ var state_data_JSON = {
             "Total murders1": "522.0"
         },
         "Name": "Georgia",
+        "smartgunlaws":"38",
         "alcoholserved": "partial ban",
         "arenas": "unclear",
         "churches": "unclear",
@@ -960,6 +970,7 @@ var state_data_JSON = {
             "Total murders1": "7.0"
         },
         "Name": "Hawaii",
+        "smartgunlaws":"4",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -1055,6 +1066,7 @@ var state_data_JSON = {
             "Total murders1": "44.0"
         },
         "Name": "Iowa",
+        "smartgunlaws":"13",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -1150,6 +1162,7 @@ var state_data_JSON = {
             "Total murders1": "32.0"
         },
         "Name": "Idaho",
+        "smartgunlaws":"49",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "unclear",
@@ -1245,6 +1258,7 @@ var state_data_JSON = {
             "Total murders1": "452.0"
         },
         "Name": "Illinois",
+        "smartgunlaws":"6",
         "alcoholserved": "ban",
         "arenas": "allowed",
         "churches": "allowed",
@@ -1340,6 +1354,7 @@ var state_data_JSON = {
             "Total murders1": "284.0"
         },
         "Name": "Indiana",
+        "smartgunlaws":"30",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -1435,6 +1450,7 @@ var state_data_JSON = {
             "Total murders1": "110.0"
         },
         "Name": "Kansas",
+        "smartgunlaws":"37",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -1530,6 +1546,7 @@ var state_data_JSON = {
             "Total murders1": "150.0"
         },
         "Name": "Kentucky",
+        "smartgunlaws":"46",
         "alcoholserved": "partial ban",
         "arenas": "allowed",
         "churches": "allowed",
@@ -1625,6 +1642,7 @@ var state_data_JSON = {
             "Total murders1": "485.0"
         },
         "Name": "Louisiana",
+        "smartgunlaws":"28",
         "alcoholserved": "partial ban",
         "arenas": "allowed",
         "churches": "ban",
@@ -1720,6 +1738,7 @@ var state_data_JSON = {
             "Total murders1": "183.0"
         },
         "Name": "Massachusetts",
+        "smartgunlaws":"3",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -1815,6 +1834,7 @@ var state_data_JSON = {
             "Total murders1": "398.0"
         },
         "Name": "Maryland",
+        "smartgunlaws":"7",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -1910,6 +1930,7 @@ var state_data_JSON = {
             "Total murders1": "25.0"
         },
         "Name": "Maine",
+        "smartgunlaws":"42",
         "alcoholserved": "ban",
         "arenas": "allowed",
         "churches": "allowed",
@@ -2005,6 +2026,7 @@ var state_data_JSON = {
             "Total murders1": "613.0"
         },
         "Name": "Michigan",
+        "smartgunlaws":"15",
         "alcoholserved": "ban",
         "arenas": "ban",
         "churches": "ban",
@@ -2100,6 +2122,7 @@ var state_data_JSON = {
             "Total murders1": "70.0"
         },
         "Name": "Minnesota",
+        "smartgunlaws":"15",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "ban",
@@ -2195,6 +2218,7 @@ var state_data_JSON = {
             "Total murders1": "364.0"
         },
         "Name": "Missouri",
+        "smartgunlaws":"39",
         "alcoholserved": "partial ban",
         "arenas": "ban",
         "churches": "ban",
@@ -2290,6 +2314,7 @@ var state_data_JSON = {
             "Total murders1": "187.0"
         },
         "Name": "Mississippi",
+        "smartgunlaws":"47",
         "alcoholserved": "partial ban",
         "arenas": "ban",
         "churches": "ban",
@@ -2385,6 +2410,7 @@ var state_data_JSON = {
             "Total murders1": "18.0"
         },
         "Name": "Montana",
+        "smartgunlaws":"41",
         "alcoholserved": "ban",
         "arenas": "allowed",
         "churches": "allowed",
@@ -2480,6 +2506,7 @@ var state_data_JSON = {
             "Total murders1": "489.0"
         },
         "Name": "North Carolina",
+        "smartgunlaws":"23",
         "alcoholserved": "ban",
         "arenas": "allowed",
         "churches": "unclear",
@@ -2575,6 +2602,7 @@ var state_data_JSON = {
             "Total murders1": "12.0"
         },
         "Name": "North Dakota",
+        "smartgunlaws":"36",
         "alcoholserved": "ban",
         "arenas": "ban",
         "churches": "ban",
@@ -2670,6 +2698,7 @@ var state_data_JSON = {
             "Total murders1": "65.0"
         },
         "Name": "Nebraska",
+        "smartgunlaws":"32",
         "alcoholserved": "partial ban",
         "arenas": "ban",
         "churches": "ban",
@@ -2765,6 +2794,7 @@ var state_data_JSON = {
             "Total murders1": "16.0"
         },
         "Name": "New Hampshire",
+        "smartgunlaws":"25",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -2860,6 +2890,7 @@ var state_data_JSON = {
             "Total murders1": "379.0"
         },
         "Name": "New Jersey",
+        "smartgunlaws":"2",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -2955,6 +2986,7 @@ var state_data_JSON = {
             "Total murders1": "121.0"
         },
         "Name": "New Mexico",
+        "smartgunlaws":"45",
         "alcoholserved": "partial ban",
         "arenas": "allowed",
         "churches": "allowed",
@@ -3050,6 +3082,7 @@ var state_data_JSON = {
             "Total murders1": "129.0"
         },
         "Name": "Nevada",
+        "smartgunlaws":"29",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -3145,6 +3178,7 @@ var state_data_JSON = {
             "Total murders1": "774.0"
         },
         "Name": "New York",
+        "smartgunlaws":"8",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -3240,6 +3274,7 @@ var state_data_JSON = {
             "Total murders1": "488.0"
         },
         "Name": "Ohio",
+        "smartgunlaws":"22",
         "alcoholserved": "ban",
         "arenas": "allowed",
         "churches": "partial",
@@ -3335,6 +3370,7 @@ var state_data_JSON = {
             "Total murders1": "204.0"
         },
         "Name": "Oklahoma",
+        "smartgunlaws":"34",
         "alcoholserved": "partial ban",
         "arenas": "ban",
         "churches": "allowed",
@@ -3430,6 +3466,7 @@ var state_data_JSON = {
             "Total murders1": "77.0"
         },
         "Name": "Oregon",
+        "smartgunlaws":"21",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -3525,6 +3562,7 @@ var state_data_JSON = {
             "Total murders1": "636.0"
         },
         "Name": "Pennsylvania",
+        "smartgunlaws":"11",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -3620,6 +3658,7 @@ var state_data_JSON = {
             "Total murders1": "14.0"
         },
         "Name": "Rhode Island",
+        "smartgunlaws":"9",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -3715,6 +3754,7 @@ var state_data_JSON = {
             "Total murders1": "319.0"
         },
         "Name": "South Carolina",
+        "smartgunlaws":"31",
         "alcoholserved": "ban",
         "arenas": "unclear",
         "churches": "ban",
@@ -3810,6 +3850,7 @@ var state_data_JSON = {
             "Total murders1": "15.0"
         },
         "Name": "South Dakota",
+        "smartgunlaws":"35",
         "alcoholserved": "partial ban",
         "arenas": "allowed",
         "churches": "allowed",
@@ -3905,6 +3946,7 @@ var state_data_JSON = {
             "Total murders1": "373.0"
         },
         "Name": "Tennessee",
+        "smartgunlaws":"20",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -4000,6 +4042,7 @@ var state_data_JSON = {
             "Total murders1": "1089.0"
         },
         "Name": "Texas",
+        "smartgunlaws":"19",
         "alcoholserved": "partial ban",
         "arenas": "ban",
         "churches": "ban",
@@ -4095,6 +4138,7 @@ var state_data_JSON = {
             "Total murders1": "51.0"
         },
         "Name": "Utah",
+        "smartgunlaws":"33",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "ban",
@@ -4190,6 +4234,7 @@ var state_data_JSON = {
             "Total murders1": "303.0"
         },
         "Name": "Virginia",
+        "smartgunlaws":"16",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "ban",
@@ -4285,6 +4330,7 @@ var state_data_JSON = {
             "Total murders1": "8.0"
         },
         "Name": "Vermont",
+        "smartgunlaws":"48",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -4380,6 +4426,7 @@ var state_data_JSON = {
             "Total murders1": "161.0"
         },
         "Name": "Washington",
+        "smartgunlaws":"14",
         "alcoholserved": "ban",
         "arenas": "allowed",
         "churches": "allowed",
@@ -4475,6 +4522,7 @@ var state_data_JSON = {
             "Total murders1": "135.0"
         },
         "Name": "Wisconsin",
+        "smartgunlaws":"17",
         "alcoholserved": "partial ban",
         "arenas": "allowed",
         "churches": "allowed",
@@ -4570,6 +4618,7 @@ var state_data_JSON = {
             "Total murders1": "74.0"
         },
         "Name": "West Virginia",
+        "smartgunlaws":"26",
         "alcoholserved": "allowed",
         "arenas": "allowed",
         "churches": "allowed",
@@ -4665,6 +4714,7 @@ var state_data_JSON = {
             "Total murders1": "15.0"
         },
         "Name": "Wyoming",
+        "smartgunlaws":"43",
         "alcoholserved": "partial ban",
         "arenas": "ban",
         "churches": "ban",

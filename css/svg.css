@@ -25,27 +25,14 @@ html, body, div, form, fieldset, input, textarea, li, ul, hr {
     stroke-width: 2px;
 }
 
-.container{
-    width: 400px;
-    /*min-height: 100%;*/
-    padding: 5px;
-    padding-left: 0px;
-    margin-right: auto;
-}
-
 .container svg {
 	cursor: crosshair;
 }
 
-#bars {
-}
-
-#bartitle {
-    font-weight: bold;
-}
-
-#linetitle {
+#linetitle, #bartitle {
+    color: #333333;
     background-color: white;
+    font-size: 11px;
     font-weight: bold;
 }
 

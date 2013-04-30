@@ -21,15 +21,18 @@
 </head>
 
 <body>
+<div id="wrapper">
 	<div id="description">
-		<h1>Firearm Homicides in the United States</h1>
+		<h1>Firearm Homicides and Regulations in the United States</h1>
 		<h2>by Josh McElfresh and Lauren Middleton</h2>
 		<button>Take a Tour</button>
 		<h3 data-intro='Hello step one!' data-step='1'>
-			Use the filters to see the rates of firearm homicide per hundred thousand people for the selected year and firearm type. Click a state to see it's firearm homicide data over time. Click and drag over one or more points to see the breakdown of types for a range of years. Firearm homicide and population data from FBI.gov and census.gov. Firearm law data and descriptions from a <a href="http://www.guardian.co.uk/world/interactive/2013/jan/15/gun-laws-united-states">guardian.co.uk visualization</a>.
+			Use the filters to see the rates of firearm homicide per hundred thousand people for the selected year and firearm type. Click a state to see it's firearm homicide data over time. Click and drag over one or more points to see the breakdown of types for a range of years. Firearm homicide and population data from FBI.gov and census.gov. Firearm law data and descriptions from a <a href="http://www.guardian.co.uk/world/interactive/2013/jan/15/gun-laws-united-states" target="_blank">guardian.co.uk visualization</a>.
 		</h3>
 	</div>
 
+	<div id="sec1-title">Firearm Homicides</div>
+	<div id="map1-title">Firearm Homicides per 100K People</div>
 	<div id="map1"></div>
 
 	<div id="control-panel">
@@ -47,13 +50,11 @@
 			<option value="handguns">Handguns</option>
 			<option value="rifles">Rifles</option>
 			<option value="shotguns">Shotguns</option>
-			<option value="unknown">Firearms (type unknown)</option>
+			<option value="unknown">Unknown Type</option>
 		</select>
 		<br /><br />
 		
 		<div id="key">
-			<span><strong>Firearm Homicides per 100K People</strong></span>
-			<br /><br />
 			<ul class="ul-basic">
 				<li>
 					<div class="color-key" id="color-key1"></div>
@@ -94,13 +95,17 @@
 		</div>
 		<div class="bar-graph-parent">
 			<div id="bartitle"></div>
-    		<svg id="bars" width="500" height="200"></svg>
+    		<svg id="bars" width="300" height="200"></svg>
     	</div>
 	</div>
 
+	<div id="sec2-title" style="clear: both;">Firearm Regulations</div>
+	<div id="map2-title">test</div>
 	<div id="map2"></div>
+
 	<div id="control-panel2">
 		<select id="law-type">
+			<!--
 			<option value="all">All Regulations</option>
 			<option value="alcoholserved">Alcohol</option>
 			<option value="arenas">Sports Arenas</option>
@@ -110,59 +115,26 @@
 			<option value="gunsoncampus">College Campuses</option>
 			<option value="hospitals">Hospitals</option>
 			<option value="hownerlicense">hownerlicense</option>
-
 			<option value="hregistration">hregistration</option>
 			<option value="lockingdevice">Locking Device</option>
-
 			<option value="loststolen">Lost/Stolen</option>
 			<option value="opencarryhandguns">opencarryhandguns</option>
 			<option value="opencarrylongguns">opencarrylongguns</option>
 			<option value="privatesellerregulation">privatesellerregulation</option>
-
 			<option value="rregistration">rregistration</option>
 			<option value="standgroundlaw">standgroundlaw</option>
+			-->
 		</select>
-		<div id="key2">
-			<span><strong>KEY TITLE</strong></span>
-			<br /><br />
-			<ul class="ul-basic">
-				<li>
-					<div class="color-key" id="map2-color-key1"></div>
-					<span class="key-text">lev1</span>
-				</li>
-				<li>
-					<div class="color-key" id="map2-color-key2"></div>
-					<span class="key-text">lev2</span>
-				</li>
-				<li>
-					<div class="color-key" id="map2-color-key3"></div>
-					<span class="key-text">lev3</span>
-				</li>
-				<li>
-					<div class="color-key" id="map2-color-key4"></div>
-					<span class="key-text">lev4</span>
-				</li>
-				<li>
-					<div class="color-key" id="map2-color-key5"></div>
-					<span class="key-text">lev5</span>
-				</li>
-				<li>
-					<div class="color-key" id="map2-color-key6"></div>
-					<span class="key-text">lev6</span>
-				</li>
-				<li>
-					<div class="color-key" id="map2-color-key-no-data"></div>
-					<span class="key-text">No Data</span>
-				</li>
-			</ul>
-		</div>
+
+		<div id="key2"></div>
 	</div>
 
-	<div id="state-law-details-parent" style="background-color: pink; float: right; width: 350px;"></span></div>
+	<div id="state-law-details-parent"></span></div>
 
 	<!--
 	<iframe src="http://player.vimeo.com/video/63628209" width="500" height="300" frameborder="0"></iframe>
 -->
+</div>
 </body>
 
 </html>

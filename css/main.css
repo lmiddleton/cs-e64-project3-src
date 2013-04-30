@@ -4,7 +4,7 @@ body{
 	color: #333333;
 	font-family: Arial;
 	font-size: 13px;
-	min-width: 1200px;
+	min-width: 1400px;
 }
 
 path {
@@ -26,33 +26,72 @@ h3 {
 	font-weight: normal;
 }
 
+select{
+	font-size: 10px;
+	margin-bottom: 5px;
+	width: 100px;
+}
+
+#wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	width: 95%;
+}
+
 #description {
 	padding: 10px;
 }
 
 #map1, #map2 {
+	clear: left;
 	float: left;
 	height: 300px;
-	margin-bottom: 50px;
-	margin-left: 30px;
-	margin-top: 20px;
 	width: 500px;
 }
 
-#map1 svg {
+#sec1-title, #sec2-title {
+	background-color: #efefef;
+	border-left: solid 5px #cfcfcf;
+	border-bottom: dotted 1px #cfcfcf;
+	color: #666666;
+	font-size: 14px;
+	font-weight: bold;
+	height: 15px;
+	padding: 2px;
+	padding-left: 10px;
+}
+
+#map1-title {
+	font-size: 11px;
+	font-weight: bold;
+	left: 50px;
+	position: absolute;
+	top: 185px;
+}
+
+#map2-title {
+	font-size: 11px;
+	font-weight: bold;
+	left: 50px;
+	position: absolute;
+	top: 507px;
 }
 
 #control-panel, #control-panel2 {
 	float: left;
+	font-size: 11px;
+	margin-top: 10px;
+	width: 160px;
 }
 
 .color-key {
-	background-color: grey;
-	border: solid 1px #d7d7d7;
+	background-color: #efefef;
+	border: solid 1px #999999;
 	display: inline-block;
-	height: 20px;
+	height: 15px;
 	margin-bottom: 3px;
-	width: 30px;
+	width: 15px;
+	vertical-align: bottom;
 }
 
 #color-key1 {
@@ -83,6 +122,26 @@ h3 {
 	background-color: #efefef;
 }
 
+#state-law-details-parent {
+	font-size: 11px;
+	float: left;
+	margin-left: 10px;
+	width: 400px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.law-breakdown-title {
+	color: #333333;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.law-desc {
+	color: #607B8B;
+	margin-left: 20px;
+}
+
 .key-text {
 	display: inline-block;
 	line-height: 10px;
@@ -98,16 +157,30 @@ h3 {
 	list-style-type: none;
 }
 
+.hidden{
+	display: none;
+}
+
 .graph-parent {
-	clear: both;
+	margin-top: 10px;
+	min-width: 400px;
 }
 
 .line-graph-parent {
 	float: left;
-	margin-left: 40px;
+	margin-left: 10px;
 }
 
 .bar-graph-parent {
 	float: left;
-	margin-left: 80px;
+	margin-left: 10px;
 }
+
+/*adapted from jQuery UI*/
+.ui-icon { display: inline-block; text-indent: -99999px; overflow: hidden; background-repeat: no-repeat; cursor: pointer; vertical-align: bottom; }
+
+.ui-icon { width: 16px; height: 16px; background-image: url(images/ui-icons_587594_256x240.png); }
+
+.ui-icon-triangle-1-e { background-position: -32px -16px; }
+
+.ui-icon-triangle-1-s { background-position: -64px -16px; }

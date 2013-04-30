@@ -380,6 +380,12 @@ var gun_key = {
                 "rating":"AWFUL",
                 "name":"Deadly force permitted, including in vehicles"
             }
+        },
+        "smartgunlaws": {
+                "name":"SmartGunLaw.org Score",
+                "all": {
+                        "name":"SmartGunLaw.org Score"
+                }
         }
     }
 

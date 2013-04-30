@@ -6,8 +6,8 @@
 function drawGraph(state) {
 
     var margin = {top: 20, right: 50, bottom: 50, left: 50}, 
-        width = 400 - margin.left - margin.right,
-        height = 300 - margin.top - margin.bottom;
+        width = 300 - margin.left - margin.right,
+        height = 250 - margin.top - margin.bottom;
         
     var parseDate = d3.time.format("%Y").parse;
 
@@ -125,7 +125,7 @@ function drawGraph(state) {
       brushBar = p;
       $("#bars").empty();
         //console.log(d.x.getFullYear());
-        $("#bartitle").text(state_data_JSON[_STATE]["Name"] + " Firearm Homocides by Weapon - " + yearShown);
+        $("#bartitle").text(state_data_JSON[_STATE]["Name"] + " Firearm Homicides by Weapon - " + yearShown);
         drawBars(_STATE,yearShown);
 	   }
 	}
@@ -178,7 +178,7 @@ function mouseover (d) {
     
     $("#bars").empty();
     console.log(d.x.getFullYear());
-    $("#bartitle").text(state_data_JSON[_STATE]["Name"] + " Firearm Homocides by Weapon - " + d.x.getFullYear());
+    $("#bartitle").text(state_data_JSON[_STATE]["Name"] + " Firearm Homicides by Weapon - " + d.x.getFullYear());
     drawBars(_STATE,d.x.getFullYear());
 };
 
@@ -293,7 +293,7 @@ function drawBars(state,year) {
 function drawBarsYears(state,years) {
     if (years.length == 0) {
         $("#bars").empty();
-        $("#bartitle").text(state_data_JSON[_STATE]["Name"] + " Firearm Homocides by Weapon - " + yearShown);
+        $("#bartitle").text(state_data_JSON[_STATE]["Name"] + " Firearm Homicides by Weapon - " + yearShown);
         drawBars(_STATE,yearShown);
     }
     else{
@@ -334,7 +334,7 @@ function drawBarsYears(state,years) {
     
     yearRange = minYear + " to " + maxYear;
     console.log(yearRange);
-    $("#bartitle").text(state_data_JSON[_STATE]["Name"] + " Firearm Homocides by Weapon - " + yearRange);
+    $("#bartitle").text(state_data_JSON[_STATE]["Name"] + " Firearm Homicides by Weapon - " + yearRange);
     
     console.log(unknown);
     
