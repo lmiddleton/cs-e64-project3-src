@@ -214,7 +214,6 @@ function drawMapGuns(year, lawType, name, dataObject, laws) {
 		defaultFill: '#EFEFEF'
 	};
 	
-	genLawSelect(laws);
 	updateLawKey(lawType, fillColors);
 	
 	//do all necessary calculations of data here
@@ -314,6 +313,8 @@ function initLawTypeSelect() {
 	$("#law-type").change(function() {
 		//find which was selected
 		var lawType = this.value;
+		//visually select it
+		//$(this).attr('selected', '');
 		//var lawName = this.html;
 		//console.log(lawName);
 		//redraw map
@@ -386,6 +387,7 @@ window.onload = function() {
 
 	//init map 2
 	drawMapGuns(yearShown, lawType, name, state_data_JSON, laws);
+	genLawSelect(laws);
 
 	//init map2 filters
 	initLawTypeSelect();
