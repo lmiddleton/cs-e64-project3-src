@@ -3,7 +3,7 @@ var gun_key = {
             "name":"Establishments Serving Alcohol",
             "allowed":{
                 "desc":"No specific regulation banning firearms at establishments serving alcohol.",
-                "rating":"NONE",
+                "rating":"NONE", //similar to the hospitals example, should this actually be BAD or AWFUL?
                 "name":"No ban"
             },
             "ban":{
@@ -174,8 +174,8 @@ var gun_key = {
         "hospitals": {
             "name":"Firearms in Hospitals",
             "allowed": {
-                "desc":"No specific regulation or law is unclear.",
-                "rating":"NONE",
+                "desc":"No specific regulation or law is unclear.", //this is weird since the title is "allowed"
+                "rating":"NONE", //should this be AWFUL bc of above?
                 "name":"Allowed"
             },
             "ban": {

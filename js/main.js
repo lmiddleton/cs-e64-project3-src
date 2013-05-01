@@ -163,7 +163,7 @@ function gunMurdersPer(dataObject, state, year, gunType, per) {
 
 /*dynamically generates the law map filter dropdown*/
 function genLawSelect(laws){
-	$('#law-type').html('').append('<option value="all">All Regulations</option>');
+	$('#law-type').html('');
 	for(i = 0; i < laws.length; i++){
 		var lawIndex = laws[i]; //will be the option value
         if(gun_key[lawIndex]){
@@ -180,11 +180,11 @@ function updateLawKey(lawType, fillKey){
 	$('#key2').html('<br /><ul class="ul-basic" id="key2list">');
 	var obj = gun_key[lawType];
 	if (lawType == 'smartgunlaws') {
-		$('#key2list').append('<li><div class="color-key" style="background-color: ' + fillKey["GREAT"] + ';"></div> 0 - 9 </li>');
-		$('#key2list').append('<li><div class="color-key" style="background-color: ' + fillKey["GOOD"] + ';"></div> 10 - 19 </li>');
-		$('#key2list').append('<li><div class="color-key" style="background-color: ' + fillKey["NONE"] + ';"></div> 20 - 29 </li>');
-		$('#key2list').append('<li><div class="color-key" style="background-color: ' + fillKey["BAD"] + ';"></div> 30 - 39 </li>');
-		$('#key2list').append('<li><div class="color-key" style="background-color: ' + fillKey["AWFUL"] + ';"></div> 40 - 50 </li>');
+		$('#key2list').append('<li><div class="color-key" style="background-color: ' + fillKey["SCORE1"] + ';"></div> 0 - 9 </li>');
+		$('#key2list').append('<li><div class="color-key" style="background-color: ' + fillKey["SCORE2"] + ';"></div> 10 - 19 </li>');
+		$('#key2list').append('<li><div class="color-key" style="background-color: ' + fillKey["SCORE3"] + ';"></div> 20 - 29 </li>');
+		$('#key2list').append('<li><div class="color-key" style="background-color: ' + fillKey["SCORE4"] + ';"></div> 30 - 39 </li>');
+		$('#key2list').append('<li><div class="color-key" style="background-color: ' + fillKey["SCORE5"] + ';"></div> 40 - 50 </li>');
 	}
 	else {
 		for (var i in obj) {
@@ -205,12 +205,17 @@ function drawMapGuns(year, lawType, name, dataObject, laws) {
 	//var name;
 	
 	var fillColors = {
-		'GREAT': '#A6611A',
-		'GOOD': '#DFC27D',
+		'GREAT': '#018571',
+		'GOOD': '#80CDC1',
 		'NONE': '#FFFFFF',
-		'BAD': '#80CDC1',
-		'AWFUL': '#018571',
-		'UNCLEAR':'#333333', //make the same as 'NONE'? I wanted to keep them seperate because NONE means they don't have it for sure. - Okay.
+		'BAD': '#DFC27D',
+		'AWFUL': '#A6611A',
+		'UNCLEAR':'#999999',
+		'SCORE1' : '#FEF0D9',
+		'SCORE2' : '#FDCC8A',
+		'SCORE3' : '#FC8D59',
+		'SCORE4' : '#E34A33',
+		'SCORE5' : '#B30000',
 		defaultFill: '#EFEFEF'
 	};
 	
@@ -222,19 +227,19 @@ function drawMapGuns(year, lawType, name, dataObject, laws) {
 		if (lawType == 'smartgunlaws') {
 			console.log(state);
 			if (dataObject[state]['smartgunlaws'] < 10) {
-				dataObject[state]["fillKey"] = 'GREAT';
+				dataObject[state]["fillKey"] = 'SCORE1';
 			}
 			else if (dataObject[state]['smartgunlaws'] < 20 && dataObject[state]['smartgunlaws'] >= 10) {
-				dataObject[state]["fillKey"] = 'GOOD';
+				dataObject[state]["fillKey"] = 'SCORE2';
 			}
 			else if (dataObject[state]['smartgunlaws'] < 30 && dataObject[state]['smartgunlaws'] >= 20) {
-				dataObject[state]["fillKey"] = 'NONE';
+				dataObject[state]["fillKey"] = 'SCORE3';
 			}
 			else if (dataObject[state]['smartgunlaws'] < 40 && dataObject[state]['smartgunlaws'] >= 30) {
-				dataObject[state]["fillKey"] = 'BAD';
+				dataObject[state]["fillKey"] = 'SCORE4';
 			}
 			else if (dataObject[state]['smartgunlaws'] <= 50) {
-				dataObject[state]["fillKey"] = 'AWFUL';
+				dataObject[state]["fillKey"] = 'SCORE5';
 			}
 		}
 		else {
@@ -345,9 +350,9 @@ var map;
 var gunTypeShown = "all";
 var yearShown = "2006";
 //global variables for map2
-var lawType = "alcoholserved";
+var lawType = "smartgunlaws";
 //var lawName;
-var name = "Alcohol Served";
+var name = "SmartGunLaw.org Score";
 
 //global variable for map2
 var map2;
