@@ -190,6 +190,7 @@ function updateLawKey(lawType, fillKey){
 		for (var i in obj) {
 			$('#key2list').append('<li><div class="color-key" style="background-color: ' + fillKey[obj[i]["rating"]] + ';"></div> ' + obj[i]["name"] + '</li>');
 		}
+		$("li:contains('undefined')").remove(); 
 	}
 }
 
@@ -252,7 +253,8 @@ function drawMapGuns(year, lawType, name, dataObject, laws) {
 	//state_data_JSON[lawdesc] = gun_key[data[lawType]];
 	
 	//set up popup tmeplate
-	var newTemplate = '<div class="hoverinfo"><strong><%= geography.properties.name %></strong> <% if (data[lawType]) { %><hr/> <%= lawType %>: <%= gun_key[lawType][data[lawType]]["name"] %> <% } %></div>';
+	var newTemplate = '<div class="hoverinfo"><strong><%= geography.properties.name %></strong></div>';
+	//var newTemplate = '<div class="hoverinfo"><strong><%= geography.properties.name %></strong> <% if (data[lawType]) { %><hr/> <%= lawType %>: <%= gun_key[lawType][data[lawType]]["name"] %> <% } %></div>';
 	//var newTemplate = '<div class="hoverinfo"><strong><%= geography.properties.name %></strong> <% if (data[' + lawType + ']) { %><hr/> <%= lawType %>: <%= ' + gun_key[0][lawType][ + 'data[lawType]' + ']' + '%> <% } %></div>';
 	
 	//set up map variable
@@ -382,6 +384,32 @@ var laws = [
 	"standgroundlaw"
 ];
 
+function graphLawMurders(lawType,weaponType) {
+	dataSet = {};
+	
+	var obj = gun_key[lawType];
+	
+	for (var i in obj) {
+		if (i == "name") {
+			$('#barlawstitle').text('National ' + weaponType + ' Murders per 100K by Law: ' + obj[i]);
+		}
+		else {
+			dataSet[i] = {"murders":0,"population":0}
+		}
+	}
+	
+	for(var j in state_data_JSON){
+		if (j != "FL") {
+			dataSet[state_data_JSON[j][lawType]]["murders"] += parseFloat(state_data_JSON[j]["2010"][weaponType]);
+			dataSet[state_data_JSON[j][lawType]]["population"] += parseFloat(state_data_JSON[j]["2010"]["Population"]);
+		}
+		
+	}
+	console.log(dataSet);
+	
+	drawBarsLaws(dataSet,lawType);
+}
+
 window.onload = function() {
 	//init map 1
 	drawMap(yearShown, gunTypeShown, state_data_JSON);
@@ -399,6 +427,8 @@ window.onload = function() {
 
 	initTourBtn();
 
+	graphLawMurders("alcoholserved","Handguns");
+	
 	//for testing
 	//alert("javascript is working.");
 

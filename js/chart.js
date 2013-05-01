@@ -415,3 +415,80 @@ function drawBarsYears(state,years) {
     }
 
 }
+
+/* Adapted from Billy Janitsch's example in lab */
+function drawBarsLaws(dataSet,lawType) {
+    
+    data = []
+    
+    for (var i in dataSet) {
+      data.push({"label":gun_key[lawType][i]["name"],"score":((100000.0/dataSet[i]["population"])*dataSet[i]["murders"])});
+    }
+    
+    var chart = d3.select("#bars-laws");
+    var width = chart.attr("width");
+    var height = chart.attr("height");
+    
+    var w = width;
+    var h = 15;
+    
+    var x = d3.scale.linear()
+      .domain([0, 8]) // changed from [0, 5]
+      .range([0, w-150]);
+    
+    var y = d3.scale.linear()
+      .domain([0, 1])
+      .range([0, h]);
+    
+    //var color = d3.scale.linear()
+      //.domain([0, 20, 40, 60, 80]) // from 1, 2, 3, 4, 5
+      //.range(["#FFB870", "#FF9933", "#FF3300", "#FF0000", "#CC0000"]);
+    
+    chart.selectAll("rect.data")
+      .data(data)
+      .enter()
+      .append("rect")
+      .attr("x", function(d, i) { return 150; })
+      .attr("y", function(d, i) { return h*i + (height-(h*data.length))/(data.length+1)*(i+1); })
+      .attr("width", 0)
+      .attr("height", h)
+      .attr("shape-rendering", "crispEdges")
+      .attr("data-label", function(d) { return d.label})
+      .attr("stroke-width", 0)
+      //.attr("fill", function(d, i) { return color(1); })
+      .attr("class", "data")
+      .transition()
+      .duration(500)
+      .attr("width", function(d) { return x(d.score); })
+      //.attr("fill", function(d) { return color(d.score); });
+      .attr("fill", "#333333")
+    
+    chart.selectAll("text.label")
+      .data(data)
+      .enter()
+      .append("text")
+      .text(function(d) { return d.label; })
+      .attr("text-anchor", "end")
+      .attr("x", 90)
+      .attr("y", function(d, i) { return h*i + (height-(h*data.length))/(data.length+1)*(i+1) + h - 3; })
+      .attr("fill", "#333")
+      .attr("font-size", "12px")
+      .attr("font-family", "Arial")
+      .attr("stroke-width", 0)
+      .attr("data-label", function(d) { return d.label; })
+    
+    chart.selectAll("text.score")
+      .data(data)
+      .enter()
+      .append("text")
+      .text(function(d) { return parseFloat(d.score).toFixed(1) + "%"; })
+      .attr("x", function(d) { return 100; }) 
+      .attr("y", function(d, i) { return h*i + (height-(h*data.length))/(data.length+1)*(i+1) + h - 3; })
+      .attr("fill", "#333")
+      .attr("font-size", "12px")
+      .attr("font-family", "Arial")
+      .attr("stroke-width", 0)
+      .attr("data-label", function(d) { return d.label; })
+      .attr("class", "score");
+}
+
