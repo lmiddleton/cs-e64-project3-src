@@ -210,7 +210,7 @@ function drawMapGuns(year, lawType, name, dataObject, laws) {
 		'NONE': '#FFFFFF',
 		'BAD': '#80CDC1',
 		'AWFUL': '#018571',
-		'UNCLEAR':'#333333', //make the same as 'NONE'? I wanted to keep them seperate because NONE means they don't have it for sure.
+		'UNCLEAR':'#333333', //make the same as 'NONE'? I wanted to keep them seperate because NONE means they don't have it for sure. - Okay.
 		defaultFill: '#EFEFEF'
 	};
 	

@@ -147,12 +147,12 @@ var gun_key = {
             "name":"Hand Gun Permits",
             "both": {
                 "desc":"Permit and license regulations apply.",
-                "rating":"GREAT",
+                "rating":"GOOD", 
                 "name":"Permit and license required"
             },
             "license": {
                 "desc":"A permit or license is required.",
-                "rating":"GOOD",
+                "rating":"GREAT", 
                 "name":"License required"
             },
             "n": {
@@ -162,12 +162,12 @@ var gun_key = {
             },
             "permit": {
                 "desc":"A permit or license is required.",
-                "rating":"GOOD",
+                "rating":"GREAT", 
                 "name":"Permit required"
             },
             "y": {
                 "desc":"A permit or license is required.",
-                "rating":"GOOD",
+                "rating":"GREAT", 
                 "name":"Permit or license required"
             }
         },
@@ -190,7 +190,7 @@ var gun_key = {
             },
             "unclear": {
                 "desc":"No specific regulation or law is unclear.",
-                "rating":"UNCLEAR",
+                "rating":"UNCLEAR", //should this be NONE? Guardian marked it unclear, but then went with the generic description. Either way is cool.
                 "name":"Law is unclear"
             }
         },
@@ -203,7 +203,7 @@ var gun_key = {
             },
             "prohibit": {
                 "desc":"Registration is prohibited",
-                "rating":"BAD",
+                "rating":"AWFUL",
                 "name":"Prohibited"
             },
             "record": {
@@ -234,12 +234,12 @@ var gun_key = {
             "name":"Longgun Permits",
             "both": {
                 "desc":"Permit and license regulations apply.",
-                "rating":"GREAT",
+                "rating":"GOOD", 
                 "name":"Permit and license required"
             },
             "license": {
                 "desc":"A license is required.",
-                "rating":"GOOD",
+                "rating":"GREAT", 
                 "name":"License required"
             },
             "n": {
@@ -249,12 +249,12 @@ var gun_key = {
             },
             "permit": {
                 "desc":"A permit is required.",
-                "rating":"GOOD",
+                "rating":"GREAT", 
                 "name":"Permit required"
             },
             "y": {
                 "desc":"A permit or license is required.",
-                "rating":"GOOD",
+                "rating":"GREAT", 
                 "name":"Permit or license required"
             }
         },
@@ -290,7 +290,7 @@ var gun_key = {
             },
             "prohibit": {
                 "desc":"Prohibits open carrying of handguns.",
-                "rating":"GOOD",
+                "rating":"GREAT", 
                 "name":"Prohibited"
             }
         },
@@ -298,7 +298,7 @@ var gun_key = {
             "name":"Openly Carried Longguns",
             "allow": {
                 "desc":"Allows open carrying of long guns without permit or license.",
-                "rating":"NONE",
+                "rating":"AWFUL", 
                 "name":"Allowed"
             },
             "prohibit": {
@@ -333,13 +333,17 @@ var gun_key = {
                 "rating":"GREAT",
                 "name":"Universal background checks and other regulations"
             },
-            "vbg": "Voluntary background checks by private sellers."
+            "vbg": {
+                "desc":"Voluntary background checks by private sellers.",
+                "rating":"NONE", // This could be GOOD, but its so much weaker than the others. Up to you. -JM
+                "name":"Voluntary background checks by private sellers"
+            }
         },
         "rregistration": {
             "name":"Rifle Registration",
             "n": {
                 "desc":"Registration is not required or law is unclear",
-                "rating":"UNCLEAR",
+                "rating":"BAD", 
                 "name":"Not required or unclear"
             },
             "prohibit": {
@@ -349,12 +353,12 @@ var gun_key = {
             },
             "record": {
                 "desc":"A less formal record is kept",
-                "rating":"BAD",
+                "rating":"GOOD", 
                 "name":"Informal record"
             },
             "y": {
                 "desc":"Registration is required",
-                "rating":"GOOD",
+                "rating":"GREAT", 
                 "name":"required"
             }
         },
@@ -362,12 +366,12 @@ var gun_key = {
             "name":"Stand Your Ground Laws",
             "common": {
                 "desc":"Weaker self-defense law defined through a combination of case law, jury decisions and statutes.",
-                "rating":"BAD",
+                "rating":"BAD", //should this be GOOD? Since stand your ground laws are self defense laws I think its still bad
                 "name":"Weaker self-defense laws"
             },
             "n": {
                 "desc":"No law, the law is unclear or is prohibited",
-                "rating":"NONE",
+                "rating":"NONE", //should this be BAD? See above
                 "name":"No law, unclear or prohibited"
             },
             "y": {
