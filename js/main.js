@@ -82,29 +82,34 @@ function drawMap(year, gunType, dataObject) {
 	gunTypeShown = gunType;
 	
 	// Re-render the graph ever time a state is clicked
-    map.$el.bind("map-click", function(e, data) {
-        console.log(data.geography.id);
-        
-        if (data.geography.id == "FL") {
-			$(".container").empty();
-			$("#bars").empty();
-			$("#linetitle").text("No data for Florida");
-			$("#bartitle").empty();
-		}
-		else {
-			console.log(data.geography.id);
-			$(".container").empty();
-			_STATE = data.geography.id;
-			drawGraph(_STATE);
-			//_YEAR = "2006";
-			$("#linetitle").text(state_data_JSON[_STATE]["Name"] + " Firearm Homicides by Year");
-			$("#bartitle").text(state_data_JSON[_STATE]["Name"] + " Firearm Homicides by Weapon - " + yearShown);
-			$("#bars").empty();
-			drawBars(_STATE,yearShown);	
-		}
+    map.$el.bind("map-click", function(e, data) {  
+        genBarLineGraphs(data);
+        genLawDetails(data, dataObject);
+        setBreakdownExpandCollapse();
     });
 	
 	
+}
+
+/*draws line graph and bar graph for given state*/
+function genBarLineGraphs(data){
+	if (data.geography.id == "FL") {
+		$(".container").empty();
+		$("#bars").empty();
+		$("#linetitle").text("No data for Florida");
+		$("#bartitle").empty();
+	}
+	else {
+		console.log(data.geography.id);
+		$(".container").empty();
+		_STATE = data.geography.id;
+		drawGraph(_STATE);
+		//_YEAR = "2006";
+		$("#linetitle").text(state_data_JSON[_STATE]["Name"] + " Firearm Homicides by Year");
+		$("#bartitle").text(state_data_JSON[_STATE]["Name"] + " Firearm Homicides by Weapon - " + yearShown);
+		$("#bars").empty();
+		drawBars(_STATE,yearShown);	
+	}
 }
 
 /*year dropdown handler*/
@@ -276,27 +281,33 @@ function drawMapGuns(year, lawType, name, dataObject, laws) {
 	
 	// Re-render the graph every time a state is clicked
     map2.$el.bind("map-click", function(e, data) {
-        $('#state-law-details-parent').html('<span id="law-details-state">'); //clear out div
-
-        var state = data.geography.id;
-        var stateName = dataObject[state]["Name"];
-
-		$('#law-details-state').append('<span class="law-breakdown-title">' + stateName + ' Firearm Law Breakdown</span><br /><br />');
-
-        for(i = 0; i < laws.length; i++){
-        	var lawIndex = laws[i];
-        	if(gun_key[lawIndex] && lawIndex != 'smartgunlaws'){
-        		var lawName = gun_key[lawIndex]["name"];
-        		var lawCat = dataObject[state][lawIndex];
-        		var law = gun_key[lawIndex][lawCat]["name"];
-        		var lawDesc = gun_key[lawIndex][lawCat]["desc"];
-        	}
-        	
-        	$('#law-details-state').append('<div><div href="law' + i + '" class="ui-icon ui-icon-triangle-1-e law-expand"></div><strong>' + lawName + ': </strong>' +  law + '</div><div id="law' + i + '" class="hidden law-desc">' + lawDesc + '</div>');
-        }
-
+    	genBarLineGraphs(data);
+        genLawDetails(data, dataObject);
         setBreakdownExpandCollapse();
     });
+}
+
+/*generates the law details content for a given state*/
+function genLawDetails(data, dataObject) {
+	 $('#state-law-details-parent').html('<span id="law-details-state">'); //clear out div
+
+	var state = data.geography.id;
+    var stateName = dataObject[state]["Name"];
+
+	$('#law-details-state').append('<span class="law-breakdown-title">' + stateName + ' Firearm Law Breakdown</span><br /><br />');
+
+    for(i = 0; i < laws.length; i++){
+        var lawIndex = laws[i];
+        if(gun_key[lawIndex] && lawIndex != 'smartgunlaws'){
+        	var lawName = gun_key[lawIndex]["name"];
+        	var lawCat = dataObject[state][lawIndex];
+        	var law = gun_key[lawIndex][lawCat]["name"];
+        	var lawDesc = gun_key[lawIndex][lawCat]["desc"];
+        }
+        	
+        $('#law-details-state').append('<div><div href="law' + i + '" class="ui-icon ui-icon-triangle-1-e law-expand"></div><strong>' + lawName + ': </strong>' +  law + '</div><div id="law' + i + '" class="hidden law-desc">' + lawDesc + '</div>');
+    }
+
 }
 
 /*sets the expand/collapse of the law breakdown categories*/
