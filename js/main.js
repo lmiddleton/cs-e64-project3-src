@@ -127,6 +127,17 @@ function initGunTypeSelect() {
 	$("#gun-type").change(function() {
 		//find which was selected
 		var gunType = this.value;
+
+		//find which law was selected
+		var lawType = $('#law-type :selected').attr('value');
+		console.log(lawType);
+		
+		//find which gun type is selected
+		var selectedWeapon = $('#gun-type :selected').html();
+		console.log(selectedWeapon);
+		//redraw the murders by law graph
+		graphLawMurders(lawType, selectedWeapon);
+
 		//redraw map
 		drawMap(yearShown, gunType, state_data_JSON);
 	});
@@ -345,15 +356,58 @@ function initLawTypeSelect() {
 	$("#law-type").change(function() {
 		//find which was selected
 		var lawType = this.value;
+		
 		//change the highlight on the law breakdown
 		$(".law-title").removeClass('law-highlight');
 		$("[law=" + lawType + "]").addClass('law-highlight');
+
+		//find which gun type is selected
+		var selectedWeapon = $('#gun-type :selected').html();
+		//redraw the murders by law graph
+		graphLawMurders(lawType, selectedWeapon);
 
 		//redraw map
 		drawMapGuns(yearShown, lawType, name, state_data_JSON, laws);
 	});
 }
- 
+
+function graphLawMurders(lawType,weaponType) {
+	if(lawType == 'smartgunlaws'){
+		$('#barlawstitle').empty();
+		$('#bars-laws').empty();
+	}
+
+	else{
+
+		//clear out the container
+		$('#bars-laws').empty();
+
+		dataSet = {};
+	
+		var obj = gun_key[lawType];
+	
+		for (var i in obj) {
+			if (i == "name") {
+				$('#barlawstitle').html('National Homicides per 100K w/ <span class="highlight">' + weaponType + '</span> by Law: <span class="highlight">' + obj[i]) + '</span>';
+			}
+			else {
+				dataSet[i] = {"murders":0,"population":0}
+			}
+		}
+	
+		for(var j in state_data_JSON){
+			if (j != "FL") {
+				dataSet[state_data_JSON[j][lawType]]["murders"] += parseFloat(state_data_JSON[j]["2010"][weaponType]);
+				dataSet[state_data_JSON[j][lawType]]["population"] += parseFloat(state_data_JSON[j]["2010"]["Population"]);
+			}
+		
+		}
+		console.log(dataSet);
+	
+		drawBarsLaws(dataSet,lawType);
+	}
+}
+
 /******************************************************************
  ***************************TOUR OF PAGE***************************
  *****************************************************************/
@@ -409,32 +463,6 @@ var laws = [
 	"standgroundlaw"
 ];
 
-function graphLawMurders(lawType,weaponType) {
-	dataSet = {};
-	
-	var obj = gun_key[lawType];
-	
-	for (var i in obj) {
-		if (i == "name") {
-			$('#barlawstitle').text('National ' + weaponType + ' Murders per 100K by Law: ' + obj[i]);
-		}
-		else {
-			dataSet[i] = {"murders":0,"population":0}
-		}
-	}
-	
-	for(var j in state_data_JSON){
-		if (j != "FL") {
-			dataSet[state_data_JSON[j][lawType]]["murders"] += parseFloat(state_data_JSON[j]["2010"][weaponType]);
-			dataSet[state_data_JSON[j][lawType]]["population"] += parseFloat(state_data_JSON[j]["2010"]["Population"]);
-		}
-		
-	}
-	console.log(dataSet);
-	
-	drawBarsLaws(dataSet,lawType);
-}
-
 window.onload = function() {
 	//init map 1
 	drawMap(yearShown, gunTypeShown, state_data_JSON);
@@ -452,7 +480,7 @@ window.onload = function() {
 
 	initTourBtn();
 
-	graphLawMurders("alcoholserved","Handguns");
+	//graphLawMurders("alcoholserved","Handguns");
 	
 	//for testing
 	//alert("javascript is working.");

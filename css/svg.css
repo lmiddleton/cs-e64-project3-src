@@ -29,11 +29,15 @@ html, body, div, form, fieldset, input, textarea, li, ul, hr {
 	cursor: crosshair;
 }
 
-#linetitle, #bartitle {
+#linetitle, #bartitle, #barlawstitle {
     color: #333333;
     background-color: white;
     font-size: 11px;
     font-weight: bold;
+}
+
+#barlawstitle {
+    width: 400px;
 }
 
 .extent {

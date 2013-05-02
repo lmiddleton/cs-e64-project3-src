@@ -258,7 +258,7 @@ function drawBars(state,year) {
       .duration(500)
       .attr("width", function(d) { return x(d.score); })
       //.attr("fill", function(d) { return color(d.score); });
-      .attr("fill", "#333333")
+      .attr("fill", "#666666")
     
     chart.selectAll("text.label")
       .data(data)
@@ -383,7 +383,7 @@ function drawBarsYears(state,years) {
       .transition()
       .duration(500)
       .attr("width", function(d) { return x(d.score); })
-      .attr("fill", function(d) { return "#333333"; });
+      .attr("fill", function(d) { return "#666666"; });
     
     chart.selectAll("text.label")
       .data(data)
@@ -448,7 +448,7 @@ function drawBarsLaws(dataSet,lawType) {
       .data(data)
       .enter()
       .append("rect")
-      .attr("x", function(d, i) { return 150; })
+      .attr("x", function(d, i) { return 260; }) //value here moves the bars' position (default 150)
       .attr("y", function(d, i) { return h*i + (height-(h*data.length))/(data.length+1)*(i+1); })
       .attr("width", 0)
       .attr("height", h)
@@ -461,7 +461,7 @@ function drawBarsLaws(dataSet,lawType) {
       .duration(500)
       .attr("width", function(d) { return x(d.score); })
       //.attr("fill", function(d) { return color(d.score); });
-      .attr("fill", "#333333")
+      .attr("fill", "#666666")
     
     chart.selectAll("text.label")
       .data(data)
@@ -469,10 +469,10 @@ function drawBarsLaws(dataSet,lawType) {
       .append("text")
       .text(function(d) { return d.label; })
       .attr("text-anchor", "end")
-      .attr("x", 90)
+      .attr("x", 220) //value here moves the labels' position (default 90)
       .attr("y", function(d, i) { return h*i + (height-(h*data.length))/(data.length+1)*(i+1) + h - 3; })
       .attr("fill", "#333")
-      .attr("font-size", "12px")
+      .attr("font-size", "11px")
       .attr("font-family", "Arial")
       .attr("stroke-width", 0)
       .attr("data-label", function(d) { return d.label; })
@@ -481,11 +481,11 @@ function drawBarsLaws(dataSet,lawType) {
       .data(data)
       .enter()
       .append("text")
-      .text(function(d) { return parseFloat(d.score).toFixed(1) + "%"; })
-      .attr("x", function(d) { return 100; }) 
+      .text(function(d) { return parseFloat(d.score).toFixed(1); })
+      .attr("x", function(d) { return 230; }) //value here moves the value positions (default 100)
       .attr("y", function(d, i) { return h*i + (height-(h*data.length))/(data.length+1)*(i+1) + h - 3; })
       .attr("fill", "#333")
-      .attr("font-size", "12px")
+      .attr("font-size", "11px")
       .attr("font-family", "Arial")
       .attr("stroke-width", 0)
       .attr("data-label", function(d) { return d.label; })

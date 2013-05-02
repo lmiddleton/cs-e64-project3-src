@@ -1,11 +1,6 @@
 var gun_key = {
         "alcoholserved": {
             "name":"Establishments Serving Alcohol",
-            "allowed":{
-                "desc":"No specific regulation banning firearms at establishments serving alcohol.",
-                "rating":"NONE", //similar to the hospitals example, should this actually be BAD or AWFUL?
-                "name":"No ban"
-            },
             "ban":{
                 "desc":"Prohibits firearms at establishments serving alcohol.",
                 "rating":"GREAT",
@@ -15,19 +10,24 @@ var gun_key = {
                 "desc":"Prohibits firearms at most establishments serving alcohol, but may allow in certain circumstances where consuming alcohol is not the main purpose of business.",
                 "rating":"GOOD",
                 "name":"Partial Ban"
+            },
+            "allowed":{
+                "desc":"No specific regulation banning firearms at establishments serving alcohol.",
+                "rating":"NONE", //similar to the hospitals example, should this actually be BAD or AWFUL?
+                "name":"No ban"
             }
         },
         "arenas": {
             "name":"Arenas",
-            "allowed": {
-                "desc":"No specific regulation or law is unclear.",
-                "rating":"NONE",
-                "name":"No specific regulation"
-            },
             "ban": {
                 "desc":"Prohibits firearms at sporting arenas or events.",
                 "rating":"GREAT",
                 "name":"Prohibited"
+            },
+            "allowed": {
+                "desc":"No specific regulation or law is unclear.",
+                "rating":"NONE",
+                "name":"No specific regulation"
             },
             "unclear": {
                 "desc":"The law is unclear.",
@@ -38,11 +38,6 @@ var gun_key = {
         },
         "churches": {
             "name":"Places of Worship",
-            "allowed": {
-                "desc":"No specific regulation",
-                "rating":"NONE",
-                "name":"No specfic regulation"
-            },
             "ban": {
                 "desc":"Prohibits firearms at places of worship.",
                 "rating":"GREAT",
@@ -53,6 +48,11 @@ var gun_key = {
                 "rating":"GOOD",
                 "name":"Prohibited unless posted"
             },
+            "allowed": {
+                "desc":"No specific regulation",
+                "rating":"NONE",
+                "name":"No specfic regulation"
+            },
             "unclear": {
                 "desc":"The law is unclear.",
                 "rating":"UNCLEAR",
@@ -61,21 +61,21 @@ var gun_key = {
         },
         "concealedtype": {
             "name":"Concealed Handguns",
-            "may issue": {
-                "desc":"Permit to carry a concealed handgun is issued if permit requirements are met, but is also up to the discretion of local authorities.",
-                "rating":"BAD",
-                "name":"Permits issued on requirements and authority discretion"
-            },
             "no issue": {
                 "desc":"Does not allow a private citizen to carry a concealed handgun in public.",
                 "rating":"GOOD",
                 "name":"Not allowed"
             },
-            "prohibited": {
+            "may issue": {
+                "desc":"Permit to carry a concealed handgun is issued if permit requirements are met, but is also up to the discretion of local authorities.",
+                "rating":"BAD",
+                "name":"Permits on req's and authority discretion"
+            },
+            /*"prohibited": {
                 "desc":"Private citizens are prohibited from carrying a concealed handgun in public.",
                 "rating":"GREAT",
                 "name":"Prohibited"
-            },
+            },*/
             "shall issue": {
                 "desc":"Permit to carry a concealed handgun is issued when permit requirements are met.",
                 "rating":"BAD",
@@ -89,15 +89,20 @@ var gun_key = {
         },
         "gunshowregulation": {
             "name":"Firearm Sales at Gun Shows",
-            "gsbg": {
+            /*"gsbg": {
                 "desc":"Requires background checks during the sale of all firearms at gun shows.",
                 "rating":"GREAT",
                 "name":"Background check required"
+            },*/
+            "other regulation, ubg": {
+                "desc":"Requires background checks during the sale of all firearms including at gun shows and imposes other regulations.",
+                "ratings":"GREAT",
+                "name":"Background checks everywhere"
             },
-            "no regulation": {
-                "desc":"No specific regulation or the law is unclear",
-                "rating":"NONE",
-                "name":"No regulation"
+            "ubg": {
+                "desc":"Requires background checks during the sale of all firearms including at gun shows.",
+                "ratings":"GREAT",
+                "name":"Background checks required"
             },
             "other regulation": {
                 "desc":"Imposes requirements on gun shows.",
@@ -109,15 +114,10 @@ var gun_key = {
                 "rating":"GOOD",
                 "name":"Background checks and other restrictions"
             },
-            "other regulation, ubg": {
-                "desc":"Requires background checks during the sale of all firearms including at gun shows and imposes other regulations.",
-                "ratings":"GREAT",
-                "name":"Background checks and other restrictions"
-            },
-            "ubg": {
-                "desc":"Requires background checks during the sale of all firearms including at gun shows.",
-                "ratings":"GREAT",
-                "name":"Background checks required"
+            "no regulation": {
+                "desc":"No specific regulation or the law is unclear",
+                "rating":"NONE",
+                "name":"No regulation"
             }
         },
         "gunsoncampus": {
@@ -135,7 +135,7 @@ var gun_key = {
             "ban - bc noconcealed weapons": {
                 "desc":"Prohibits guns on college campuses.",
                 "rating":"GREAT",
-                "name":"Prohibited"
+                "name":"Prohibited - concealed weapons ban"
             },
             "descretion": {
                 "desc":"Left to the discretion of college administrators.",
@@ -145,11 +145,11 @@ var gun_key = {
         },
         "hownerlicense": {
             "name":"Hand Gun Permits",
-            "both": {
+            /*"both": {
                 "desc":"Permit and license regulations apply.",
                 "rating":"GOOD", 
                 "name":"Permit and license required"
-            },
+            },*/
             "license": {
                 "desc":"A permit or license is required.",
                 "rating":"GREAT", 
@@ -175,7 +175,7 @@ var gun_key = {
             "name":"Firearms in Hospitals",
             "allowed": {
                 "desc":"No specific regulation or law is unclear.", //this is weird since the title is "allowed"
-                "rating":"NONE", //should this be AWFUL bc of above?
+                "rating":"BAD", //should this be AWFUL bc of above?
                 "name":"Allowed"
             },
             "ban": {
@@ -260,11 +260,11 @@ var gun_key = {
         },
         "loststolen": {
             "name":"Lost or Stolen Firearms",
-            "civil liability": {
+            /*"civil liability": {
                 "desc":"Owner is not liable in case when a crime is committed with the gun if the owner has reported the gun is missing",
                 "rating":"GREAT",
                 "name":"Owner liable if reported missing"
-            },
+            },*/
             "no regulation": {
                 "desc":"No regulation",
                 "rating":"NONE",
@@ -272,7 +272,7 @@ var gun_key = {
             },
             "regulation": {
                 "desc":"Requires reporting lost or stolen guns",
-                "rating":"GOOD",
+                "rating":"GREAT",
                 "name":"Reporting required"
             }
         },
@@ -303,7 +303,8 @@ var gun_key = {
             },
             "prohibit": {
                 "desc":"Prohibits open carrying of long guns.",
-                "rating":"GREAT"
+                "rating":"GREAT",
+                "name":"Prohibited"
             }
         },
         "privatesellerregulation": {
@@ -331,12 +332,12 @@ var gun_key = {
             "ubg, record": {
                 "desc":"Requires universal background checks on all firearms and imposes other record keeping or reporting requirements.",
                 "rating":"GREAT",
-                "name":"Universal background checks and other regulations"
+                "name":"Universal background checks + other regs"
             },
             "vbg": {
                 "desc":"Voluntary background checks by private sellers.",
                 "rating":"NONE", // This could be GOOD, but its so much weaker than the others. Up to you. -JM
-                "name":"Voluntary background checks by private sellers"
+                "name":"Voluntary background checks by sellers"
             }
         },
         "rregistration": {
@@ -359,7 +360,7 @@ var gun_key = {
             "y": {
                 "desc":"Registration is required",
                 "rating":"GREAT", 
-                "name":"required"
+                "name":"Required"
             }
         },
         "standgroundlaw": {

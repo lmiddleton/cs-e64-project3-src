@@ -4,7 +4,7 @@ body{
 	color: #333333;
 	font-family: Arial;
 	font-size: 13px;
-	min-width: 1400px;
+	min-width: 1460px;
 }
 
 path {
@@ -130,7 +130,7 @@ select{
 	font-size: 11px;
 	float: left;
 	margin-left: 10px;
-	width: 400px;
+	width: 300px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
@@ -180,8 +180,18 @@ select{
 	margin-left: 10px;
 }
 
+#bar-graphs-laws-parent {
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
 .law-highlight{
 	color: #1C86EE !important;
+}
+
+.highlight {
+	color: #999999 !important;
 }
 
 /*adapted from jQuery UI*/
