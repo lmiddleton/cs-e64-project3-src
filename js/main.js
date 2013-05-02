@@ -395,8 +395,17 @@ function graphLawMurders(lawType,weaponType) {
 			}
 		}
 	
+		if (weaponType == "All Firearms") {
+			weaponType = "Total firearms";
+		}
+		else if (weaponType == "Unknown Type") {
+			weaponType = "Firearms (type unknown)";
+		}
+	
 		for(var j in state_data_JSON){
 			if (j != "FL") {
+				console.log(weaponType);
+				console.log(parseFloat(state_data_JSON[j]["2010"][weaponType]));
 				dataSet[state_data_JSON[j][lawType]]["murders"] += parseFloat(state_data_JSON[j]["2010"][weaponType]);
 				dataSet[state_data_JSON[j][lawType]]["population"] += parseFloat(state_data_JSON[j]["2010"]["Population"]);
 			}

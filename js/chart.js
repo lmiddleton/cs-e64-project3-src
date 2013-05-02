@@ -420,7 +420,7 @@ function drawBarsYears(state,years) {
 function drawBarsLaws(dataSet,lawType) {
     
     data = []
-    
+
     for (var i in dataSet) {
       data.push({"label":gun_key[lawType][i]["name"],"score":((100000.0/dataSet[i]["population"])*dataSet[i]["murders"])});
     }
