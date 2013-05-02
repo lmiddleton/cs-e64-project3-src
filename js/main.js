@@ -301,19 +301,25 @@ function genLawDetails(data, dataObject) {
 
     for(i = 0; i < laws.length; i++){
         var lawIndex = laws[i];
+        console.log(lawIndex);
         if(gun_key[lawIndex] && lawIndex != 'smartgunlaws'){
         	var lawName = gun_key[lawIndex]["name"];
         	var lawCat = dataObject[state][lawIndex];
         	var law = gun_key[lawIndex][lawCat]["name"];
         	var lawDesc = gun_key[lawIndex][lawCat]["desc"];
-
-        	if(lawIndex == lawSelected){
-        		$('#law-details-state').append('<div><div href="law' + i + '" class="ui-icon ui-icon-triangle-1-e law-expand"></div><strong><span class="law-title law-highlight" law="' + lawIndex + '">' + lawName + ': </span></strong>' +  law + '</div><div id="law' + i + '" class="hidden law-desc">' + lawDesc + '</div>');
-    		}
-    		else{
-    			$('#law-details-state').append('<div><div href="law' + i + '" class="ui-icon ui-icon-triangle-1-e law-expand"></div><strong><span class="law-title" law="' + lawIndex + '">' + lawName + ': </span></strong>' +  law + '</div><div id="law' + i + '" class="hidden law-desc">' + lawDesc + '</div>');
-    		}
         }
+        else if(lawIndex == 'smartgunlaws'){
+        	var lawName = gun_key[lawIndex]["name"];
+        	var law = dataObject[state]['smartgunlaws'];
+        	var lawDesc = gun_key[lawIndex]["name"];
+        }
+        
+        if(lawIndex == lawSelected){
+        	$('#law-details-state').append('<div><div href="law' + i + '" class="ui-icon ui-icon-triangle-1-e law-expand"></div><strong><span class="law-title law-highlight" law="' + lawIndex + '">' + lawName + ': </span></strong>' +  law + '</div><div id="law' + i + '" class="hidden law-desc">' + lawDesc + '</div>');
+    	}
+    	else{
+    		$('#law-details-state').append('<div><div href="law' + i + '" class="ui-icon ui-icon-triangle-1-e law-expand"></div><strong><span class="law-title" law="' + lawIndex + '">' + lawName + ': </span></strong>' +  law + '</div><div id="law' + i + '" class="hidden law-desc">' + lawDesc + '</div>');
+    	}
     }
 
 }
