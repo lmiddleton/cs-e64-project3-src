@@ -100,7 +100,6 @@ function genBarLineGraphs(data){
 		$("#bartitle").empty();
 	}
 	else {
-		console.log(data.geography.id);
 		$(".container").empty();
 		_STATE = data.geography.id;
 		drawGraph(_STATE);
@@ -298,21 +297,14 @@ function drawMapGuns(year, lawType, name, dataObject, laws) {
     });
 }
 
-/*generates the law details content for a given state*/
-function genLawDetails(data, dataObject) {
-	$('#state-law-details-parent').html('<span id="law-details-state">'); //clear out div
-
-	var lawSelected = $('#law-type :selected').val(); //find which law is selected
-	console.log(lawSelected);
-
-	var state = data.geography.id;
-    var stateName = dataObject[state]["Name"];
+function drawLawList(dataObject, state, lawSelected){
+	console.log('drawLawList called');
+	var stateName = dataObject[state]["Name"];
 
 	$('#law-details-state').append('<span class="law-breakdown-title">' + stateName + ' Firearm Law Breakdown</span><br /><br />');
 
     for(i = 0; i < laws.length; i++){
         var lawIndex = laws[i];
-        console.log(lawIndex);
         if(gun_key[lawIndex] && lawIndex != 'smartgunlaws'){
         	var lawName = gun_key[lawIndex]["name"];
         	var lawCat = dataObject[state][lawIndex];
@@ -332,7 +324,19 @@ function genLawDetails(data, dataObject) {
     		$('#law-details-state').append('<div><div href="law' + i + '" class="ui-icon ui-icon-triangle-1-e law-expand"></div><strong><span class="law-title" law="' + lawIndex + '">' + lawName + ': </span></strong>' +  law + '</div><div id="law' + i + '" class="hidden law-desc">' + lawDesc + '</div>');
     	}
     }
+}
 
+/*generates the law details content for a given state*/
+function genLawDetails(data, dataObject) {
+	$('#state-law-details-parent').html('<span id="law-details-state">'); //clear out div
+
+	var lawSelected = $('#law-type :selected').val(); //find which law is selected
+	console.log(lawSelected);
+
+	var state = data.geography.id;
+
+	drawLawList(dataObject, state, lawSelected);
+    
 }
 
 /*sets the expand/collapse of the law breakdown categories*/
@@ -422,12 +426,38 @@ function graphLawMurders(lawType,weaponType) {
  *****************************************************************/
 
  function initTourBtn() {
- 	$('button')
- 		.button()
+ 	$('#tour')
+ 		//.button()
  		.click(function(event){
  			event.preventDefault();
  			introJs().start();
  		});
+ }
+
+ function initStateBtns(){
+ 	$('.state-btn').click(function(event){
+ 		event.preventDefault();
+ 		var state = this.id;
+ 		genPageforState(state);
+ 	});
+ }
+
+ function genPageforState(state){
+ 	//clear out line graph
+ 	$('.container').empty();
+
+ 	//init side graphs for sec 1
+	$("#linetitle").text(state_data_JSON[state]["Name"] + " Firearm Homicides by Year");
+	$("#bartitle").text(state_data_JSON[state]["Name"] + " Firearm Homicides by Weapon - " + yearShown);
+	drawGraph(state);
+	drawBars(state, yearShown);
+
+	//init side graphs for sec 2
+	$('#state-law-details-parent').html('<span id="law-details-state">'); //clear out div
+	var lawSelected = $('#law-type :selected').val(); //find which law is selected
+	console.log('doc ready lawSelected: ' + lawSelected);
+	drawLawList(state_data_JSON, state, lawSelected);
+	setBreakdownExpandCollapse();
  }
 
 
@@ -473,6 +503,9 @@ var laws = [
 ];
 
 window.onload = function() {
+	var startState = "MA";
+	_STATE = "MA";
+
 	//init map 1
 	drawMap(yearShown, gunTypeShown, state_data_JSON);
 
@@ -487,7 +520,10 @@ window.onload = function() {
 	//init map2 filters
 	initLawTypeSelect();
 
+	genPageforState(startState);
+
 	initTourBtn();
+	initStateBtns();
 
 	//graphLawMurders("alcoholserved","Handguns");
 	

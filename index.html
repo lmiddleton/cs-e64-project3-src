@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>Firearm Homicides in the US</title>
+	<title>Linking Firearm Laws to Firearm Deaths</title>
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.9.2.custom.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/introjs.css" />
@@ -22,20 +22,49 @@
 
 <body>
 <div id="wrapper">
-	<div id="description">
-		<h1>Firearm Homicides and Regulations in the United States</h1>
+	<div id="description" style="height: 260px;" data-intro="This visualization explores the possible link between firearm homicide rate and firearm regulations in the US. The data for the four states listed above shows how it can be difficult to make a connection. Click each state button to explore the details, or click 'Next' for a breakdown of the different components of the visualization." data-step='1'>
+		<h1>Linking Firearm Laws to Firearm Deaths - Where's the 'Smoking Gun'?</h1>
 		<h2>by Josh McElfresh and Lauren Middleton</h2>
-		<button>Take a Tour</button>
-		<h3 data-intro='Hello step one!' data-step='1'>
+		<button id="tour">Take a Tour</button>
+		<h3>
+			<p>
+				Recent events in Colorado and Connecticut have brought firearm laws back into the public eye and political debates. <a href="http://www.nytimes.com/2013/05/02/us/politics/poll-finds-strong-support-for-tightened-gun-laws-and-path-to-citizenship.html?ref=us">Polling shows</a> that a majority of Americans support stricter gun control laws by large margins, but exacting new laws is proving difficult. After the latest attack, a bill to expand background checks when purchasing a firearm was drafted but failed to gain the required 60 votes in the Senate. President Obama called the vote "a shameful day for Washington."
+			</p>
+			<p>
+				If such legislation were to pass what effect would we expect it to have on firearm deaths in the United States? This visualization attempts to explore this question by looking at firearm homicides from the period of 2006 - 2011, as well as a range of firearm laws in each state. The data for the four states below shows how the connection between firearm laws and firearm homicides can be difficult to make. Further study is needed to determine what other factors for a given state, such as presence of major cities or unemployment rate, may show a strong correlation to firearm homicide rates.
+			</p>
+			<p style="float: left; margin-right: 20px;">
+				<button class="state-btn" id="LA">Louisiana</button><br />
+				Firearm Homicides: High<br />
+				Gun Laws: Weak
+			</p>
+			<p style="float: left; margin-right: 20px;">
+				<button class="state-btn" id="ME">Maine</button><br />
+				Firearm Homicides: Low<br />
+				Gun Laws: Weak
+			</p>
+			<p style="float: left; margin-right: 20px;">
+				<button class="state-btn" id="CA">California</button><br />
+				Firearm Homicides: Low<br />
+				Gun Laws: Strong
+			</p>
+			<p style="float: left; margin-right: 20px;">
+				<button class="state-btn" id="MD">Maryland</button><br />
+				Firearm Homicides: High<br />
+				Gun Laws: Strong
+			</p>
+
+			<!--
 			Use the filters to see the rates of firearm homicide per hundred thousand people for the selected year and firearm type. Click a state to see it's firearm homicide data over time. Click and drag over one or more points to see the breakdown of types for a range of years. Firearm homicide and population data from FBI.gov and census.gov. Firearm law data and descriptions from a <a href="http://www.guardian.co.uk/world/interactive/2013/jan/15/gun-laws-united-states" target="_blank">guardian.co.uk visualization</a>.
+		-->
 		</h3>
 	</div>
 
 	<div id="sec1-title">Firearm Homicides</div>
 	<div id="map1-title">Firearm Homicides per 100K People</div>
-	<div id="map1"></div>
+	<div id="map1" data-intro="The first map shows firearm homicides per hundred thousand people for the selected year and type of firearm. The lighter a state's color, the less firearm homicides it had for that year and weapon type. Try hovering over a state to see more details, or clicking a state to generate additional graphs." data-step='2'></div>
 
-	<div id="control-panel">
+	<div id="control-panel" data-intro="Try making new selections from the Year and Firearm Type filters to redraw the map according to your selections. It's interesting to note when comparing firearm types that Handguns seem to be used in the majority of firearm homicides across the years, compared to Rifles and Shotguns. In additon, as the years progress there seems to be an overall lightening of the map, with the exception of certain standout states such as Louisiana." data-step='3'>
 		<select id="year">
 			<option>2006</option>
 			<option>2007</option>
@@ -89,7 +118,7 @@
 	</div>
 
 	<div class="graph-parent">
-		<div class="line-graph-parent">	
+		<div class="line-graph-parent" data-intro="This graph shows the number of firearm homicides per hundred thousand people for the clicked state over a range of years. Try selecting a region of the graph by clicking and dragging with the crosshair to update the graph to the right that shows the percentage of firearm homicides committed with each type of weapon in the current state for the year or range of years you select." data-step='4'>	
 			<div id="linetitle"></div>
 			<div class="container"></div>
 		</div>
@@ -100,22 +129,24 @@
 	</div>
 
 	<div id="sec2-title" style="clear: both;">Firearm Regulations</div>
-	<div id="map2-title">test</div>
-	<div id="map2"></div>
+	<div id="map2-title"></div>
+	<div id="map2" data-intro="The second map defaults to show scores (0-50 points) for each state's firearm laws based off of SmartGunLaw.org's rating system. The lower the score (and lighter the color), the stronger the firearm laws are in that state. Try clicking a state to generate the details of the laws that resulted in that state's score (to the right)." data-step='5'></div>
 
-	<div id="control-panel2">
+	<div id="control-panel2" data-intro="Use the Law Category filter to show the map with each state's regulations for that category, and to generate another graph that shows the national number of firearm homicides per hundred thousand people for the selected firearm type and selected law category." data-step='6'>
 		<select id="law-type"></select>
 
 		<div id="key2"></div>
 	</div>
 
 	<div class="graph-parent">
-		<div id="state-law-details-parent"></span></div>
+		<div id="state-law-details-parent" data-intro="To see details of the firearm regulations for the clicked state, expand the law categories by clicking the arrows. The law category currently displayed on the map is highlighted in blue. Click 'Next' to start exploring on your own!" data-step='7'></div>
 		<div id="bar-graphs-laws-parent">
 			<div id="barlawstitle"></div>
 			<svg id="bars-laws" width="400" height="200"></svg>
 		</div>
 	</div>
+
+	<div id="credits" style="clear: both;">Data obtained from <a href="http://www.fbi.gov/stats-services/crimestats" target="_blank">FBI.gov</a>, <a href="http://www.census.gov/" target="_blank">Census.gov</a>, <a href="http://www.guardian.co.uk/world/interactive/2013/jan/15/gun-laws-united-states" target="_blank">a Guardian.co.uk visualization</a>, and <a href="http://smartgunlaws.org/" target="_blank">SmartGunLaws.org</a>.</div>
 	<!--
 	<iframe src="http://player.vimeo.com/video/63628209" width="500" height="300" frameborder="0"></iframe>
 -->

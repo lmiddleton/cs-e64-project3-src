@@ -5,6 +5,7 @@ body{
 	font-family: Arial;
 	font-size: 13px;
 	min-width: 1460px;
+	margin-top: 20px;
 }
 
 path {
@@ -32,6 +33,18 @@ select{
 	width: 100px;
 }
 
+a:link{
+	color: #4682B4;
+}
+
+a:visited{
+	color: #4682B4;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
 #wrapper {
 	margin-left: auto;
 	margin-right: auto;
@@ -40,6 +53,10 @@ select{
 
 #description {
 	padding: 10px;
+}
+
+#credits {
+	margin-bottom: 10px;
 }
 
 #map1, #map2 {
@@ -66,7 +83,7 @@ select{
 	font-weight: bold;
 	left: 50px;
 	position: absolute;
-	top: 185px;
+	top: 330px;
 }
 
 #map2-title {
@@ -74,7 +91,7 @@ select{
 	font-weight: bold;
 	left: 50px;
 	position: absolute;
-	top: 507px;
+	top: 650px;
 }
 
 #control-panel, #control-panel2 {
