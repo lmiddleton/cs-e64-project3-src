@@ -180,6 +180,10 @@ select{
 	margin-left: 10px;
 }
 
+.law-highlight{
+	color: #1C86EE !important;
+}
+
 /*adapted from jQuery UI*/
 .ui-icon { display: inline-block; text-indent: -99999px; overflow: hidden; background-repeat: no-repeat; cursor: pointer; vertical-align: bottom; }
 

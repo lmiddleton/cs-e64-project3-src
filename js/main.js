@@ -289,7 +289,10 @@ function drawMapGuns(year, lawType, name, dataObject, laws) {
 
 /*generates the law details content for a given state*/
 function genLawDetails(data, dataObject) {
-	 $('#state-law-details-parent').html('<span id="law-details-state">'); //clear out div
+	$('#state-law-details-parent').html('<span id="law-details-state">'); //clear out div
+
+	var lawSelected = $('#law-type :selected').val(); //find which law is selected
+	console.log(lawSelected);
 
 	var state = data.geography.id;
     var stateName = dataObject[state]["Name"];
@@ -298,14 +301,20 @@ function genLawDetails(data, dataObject) {
 
     for(i = 0; i < laws.length; i++){
         var lawIndex = laws[i];
+        console.log(lawIndex);
         if(gun_key[lawIndex] && lawIndex != 'smartgunlaws'){
         	var lawName = gun_key[lawIndex]["name"];
         	var lawCat = dataObject[state][lawIndex];
         	var law = gun_key[lawIndex][lawCat]["name"];
         	var lawDesc = gun_key[lawIndex][lawCat]["desc"];
         }
-        	
-        $('#law-details-state').append('<div><div href="law' + i + '" class="ui-icon ui-icon-triangle-1-e law-expand"></div><strong>' + lawName + ': </strong>' +  law + '</div><div id="law' + i + '" class="hidden law-desc">' + lawDesc + '</div>');
+        
+        if(lawIndex == lawSelected){
+        	$('#law-details-state').append('<div><div href="law' + i + '" class="ui-icon ui-icon-triangle-1-e law-expand"></div><strong><span class="law-title law-highlight" law="' + lawIndex + '">' + lawName + ': </span></strong>' +  law + '</div><div id="law' + i + '" class="hidden law-desc">' + lawDesc + '</div>');
+    	}
+    	else{
+    		$('#law-details-state').append('<div><div href="law' + i + '" class="ui-icon ui-icon-triangle-1-e law-expand"></div><strong><span class="law-title" law="' + lawIndex + '">' + lawName + ': </span></strong>' +  law + '</div><div id="law' + i + '" class="hidden law-desc">' + lawDesc + '</div>');
+    	}
     }
 
 }
@@ -331,10 +340,10 @@ function initLawTypeSelect() {
 	$("#law-type").change(function() {
 		//find which was selected
 		var lawType = this.value;
-		//visually select it
-		//$(this).attr('selected', '');
-		//var lawName = this.html;
-		//console.log(lawName);
+		//change the highlight on the law breakdown
+		$(".law-title").removeClass('law-highlight');
+		$("[law=" + lawType + "]").addClass('law-highlight');
+
 		//redraw map
 		drawMapGuns(yearShown, lawType, name, state_data_JSON, laws);
 	});
