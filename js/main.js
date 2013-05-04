@@ -450,6 +450,7 @@ function graphLawMurders(lawType,weaponType) {
 	$("#linetitle").text(state_data_JSON[state]["Name"] + " Firearm Homicides by Year");
 	$("#bartitle").text(state_data_JSON[state]["Name"] + " Firearm Homicides by Weapon - " + yearShown);
 	drawGraph(state);
+	$("#bars").empty();
 	drawBars(state, yearShown);
 
 	//init side graphs for sec 2
